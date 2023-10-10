@@ -20,18 +20,19 @@ How I learned to love the dev shell 🤘
 ---
 
 # Dev containers
-* Containerize development evironment, packages, environment variables, etc.
-* Every developer (preferrably) uses the exakt same packages
+* Containerize development environment, packages, environment variables, etc.
+* Every developer (preferably) uses the exact same packages
 * Documentation for setting up dev environment always up to date
   * Fast onboarding of new devs
 
 ---
+
 ![bg left:40% 80%](docker.svg)
 
 # Docker? (for image builds)
 * Security, hard to verify actual contents
 * Performance, poor use of caching
-* Bloated, works in layers, not software features
+* Bloated: works in layers, not software features
 * Requires internet access
   * No hermetic builds ... more on that later ...
 
@@ -47,25 +48,65 @@ How I learned to love the dev shell 🤘
 
 ---
 
-
-# Nix - tool
+# Nix package manager
 
 ![bg left:40% 80%](nixos-original.svg)
 
-* Cross platform reproducbile package manager and build system
+* Cross platform reproducible package manager and build system
   * (*nix, MacOS, WSL)
 * PhD thesis project by Eelco Dolsta (2006)
   * First stable release in 2012
-* Atomic + efficient rollbacks
+* Atomic upgrades
+* Rollbacks
+* Concurrent installations
+
+<!-- Those who use MacOS check out nix-darwin -->
+
 ---
 
 # Nix - language
 * Functional and pure
+  * Everything is an expression
 * Lazy
 * Declarative
-* Domain specific
+* Domain specific ... Haskell like
 
 <!-- Domain specific but turing complete, not a suitable as a general purpose language -->
+
+---
+
+# Basic python dev shell
+
+```nix
+{ pkgs ? import <nixpkgs> {}}:
+pkgs.mkShell {
+  buildInputs = [
+    pkgs.python3
+    pkgs.python3Packages.virtualenv
+    pkgs.nodejs
+    pkgs.yarn
+  ];
+}
+```
+
+---
+
+# Dotnet?
+
+```nix
+{ pkgs ? import <nixpkgs> {}}:
+  pkgs.mkShell {
+    buildInputs = with pkgs; [
+      (with dotnetCorePackages;
+        combinePackages [
+          sdk_7_0
+          sdk_6_0
+        ])
+      netcoredbg
+      omnisharp-roslyn
+    ];
+  }
+```
 
 ---
 
@@ -81,6 +122,16 @@ How I learned to love the dev shell 🤘
 
 ---
 
+<style scoped>
+section {
+  background: #0D1117;
+}
+</style>
+
+![bg 75%](nix-github.png)
+
+---
+
 # How does it work?!
 
 ---
@@ -92,7 +143,7 @@ How I learned to love the dev shell 🤘
 # FHS
 * Lends itself poorly for reproducibility:
   * /lib/libudev.so ... bad
-  * /lib/libudev.so.1.6.3 ... better but many unkowns like build flags
+  * /lib/libudev.so.1.6.3 ... better but many unknowns like build flags
   * What if we want different versions of the same library?
 
 ---
@@ -101,7 +152,7 @@ How I learned to love the dev shell 🤘
 * Compute a package derivation based on some nix expression ex `default.nix`. This file includes:
   * mentions of all the files and other packages that will be required during the build
   * build instructions for actually building the package,
-  * some metainformation about the package,
+  * some meta-information about the package,
   * a store path (prefix) under which the package will be installed
     * /nix/store/<hash>-<name>-<version>
     * ex. **/nix/store/d29dgx2kc94dlq8h85phzlx01x7ajhjv-firefox-118.0.1**/bin/firefox
@@ -115,6 +166,7 @@ How I learned to love the dev shell 🤘
 ![bg 100%](nix-expression.png)
 
 ---
+
 ```nix
 {
   pkgs,
@@ -142,8 +194,8 @@ pkgs.buildDotnetModule {
   useDotnetFromEnv = true;
 
   meta = with pkgs.lib; {
-    homepage = "some_homepage";
-    description = "some_description";
+    homepage = "My website";
+    description = "My awesome app";
     license = licenses.mit;
   };
 }
@@ -152,10 +204,6 @@ pkgs.buildDotnetModule {
 ---
 
 ![bg 100%](nix-instantiate.png)
-
----
-
-# Nix store
 
 ---
 
@@ -168,32 +216,19 @@ pkgs.buildDotnetModule {
 ---
 
 # Pros
-* reproducibility ... duh
+* Reproducibility ... duh
 * Binary caching, hash can be calculated beforehand
-* Multiple version simultaniosuly
-* Isolated builds => non-privieleged builds
+* Multiple version simultaneously
+* Isolated builds => non-privileged builds
 * Small footprint/backups
+* Accumulates a lot of packages/versions
+  * Garbage collection included in tooling 🗑️
+
+<!-- Meme slide ahead -->
 
 ---
 
 ![bg 80%](charlie.jpg)
-
----
-
-# Basic python dev shell
-
-```nix
-{ pkgs ? import <nixpkgs> {}
-}:
-pkgs.mkShell {
-  buildInputs = [
-    pkgs.python3
-    pkgs.python3Packages.virtualenv
-    pkgs.nodejs
-    pkgs.yarn
-  ];
-}
-```
 
 ---
 
@@ -207,5 +242,13 @@ pkgs.mkShell {
 
 ---
 
-![bg 30%](rabbit_hole.jpg)
+# Where to go from here?
+* Install nix from `https://nixos.org`
+* Read some docs: `https://nix.dev` is a very good resource alongside the official nix manual
+* Use nix (`nix-env` + `nix-channel`) to install packages not present on your current distribution
+* Play around with `nix-shell` and create some isolated dev shells
+* Check out `home-manager` to manage both user packages and dotfiles
 
+---
+
+![bg 30%](rabbit_hole.jpg)
