@@ -207,7 +207,7 @@ pkgs.buildDotnetModule {
 
 ---
 
-![bg 25%](nix-store-1.png)
+![bg 60%](nix-store-1.png)
 
 ---
 
@@ -219,7 +219,7 @@ pkgs.buildDotnetModule {
 * Reproducibility ... duh
 * Binary caching, hash can be calculated beforehand
 * Multiple version simultaneously
-* Isolated builds => non-privileged builds
+* Hermetic/isolated builds
 * Small footprint/backups
 * Accumulates a lot of packages/versions
   * Garbage collection included in tooling 🗑️
