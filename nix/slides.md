@@ -36,11 +36,62 @@ How I learned to love the dev shell 🤘
 * Requires internet access
   * No hermetic builds ... more on that later ...
 
+<!-- Poor software bill of materials -->
+<!-- Caching, Nix does a much better job -->
 <!-- Build commands in Dockerfiles end up as metadata in the resulting image -->
 
 ---
 
 # Reproducible?
+
+```dockerfile
+FROM ubuntu
+
+RUN set -eux;
+	apt-get update;
+	apt-get install -y --no-install-recommends \
+		ca-certificates \
+		curl \
+	; \
+	rm -rf /var/lib/apt/lists/*
+
+COPY . /app
+
+CMD /app/app
+```
+<!-- ubuntu what? -->
+<!-- Chain commands to follow best practices -->
+<!-- apt-get is non determenistic/temporal -->
+<!-- How is app even built and what version/packages was used?  -->
+
+---
+
+# Reproducible?
+
+```dockerfile
+FROM ubuntu # Ubuntu what exactly?
+
+RUN set -eux;
+	apt-get update; # apt-get is non determenistic and temporal
+	apt-get install -y --no-install-recommends \
+		ca-certificates \
+		curl \
+	; \
+	rm -rf /var/lib/apt/lists/* # Cleaning up our garbage I see
+
+COPY . /app # What environment even built this???
+
+CMD /app/app
+```
+<!-- ubuntu what? -->
+<!-- Chain commands to follow best practices -->
+<!-- apt-get is non determenistic/temporal -->
+<!-- How is app even built and what version/packages was used?  -->
+
+---
+
+# Reproducible?
+
 * 2 people using the same docker image => same results
 * 2 people building the same Dockerfile => (very often) different results
 * Non dev container scenarios even worse
@@ -75,7 +126,7 @@ How I learned to love the dev shell 🤘
 
 ---
 
-# Basic python dev shell
+# Basic Python + Web dev shell
 
 ```nix
 { pkgs ? import <nixpkgs> {}}:
@@ -213,6 +264,8 @@ pkgs.buildDotnetModule {
 
 ![bg 80%](user-environments.png)
 
+<!-- Demo time -->
+
 ---
 
 # Pros
@@ -221,8 +274,6 @@ pkgs.buildDotnetModule {
 * Multiple version simultaneously
 * Hermetic/isolated builds
 * Small footprint/backups
-* Accumulates a lot of packages/versions
-  * Garbage collection included in tooling 🗑️
 
 <!-- Meme slide ahead -->
 
@@ -237,8 +288,10 @@ pkgs.buildDotnetModule {
   * New toolchain
   * New language
 * Many existing tools/projects may not be suitable for reproducibility in current form
+* Accumulates a lot of packages/versions
+  * Garbage collection included in tooling 🗑️
 * Documentation (organization) could be better
-* Powerful tool, but more powerful if everyone in a team uses it
+* Very powerful ... but more powerful if everyone in a team uses it
 
 ---
 
