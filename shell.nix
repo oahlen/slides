@@ -1,6 +1,11 @@
-{pkgs ? import <nixpkgs> {}}:
+{
+  pkgs ? import <nixpkgs> {
+    config = { };
+    overlays = [ ];
+  },
+}:
 pkgs.mkShell {
   buildInputs = [
-    pkgs.hello
+    pkgs.marp-cli
   ];
 }
