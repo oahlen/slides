@@ -19,6 +19,8 @@ The road to a better dev environment
 
 ---
 
+![bg left:40% 80%](want.webp)
+
 # What do we want?
 
 * Access to as many (up to date) packages/SDKs/toolchains as possible
@@ -31,6 +33,7 @@ Using as few tools as possible ...
 ---
 
 # Dev containers
+
 * Containerize development environment, packages, environment variables, etc.
 * Every developer (preferably) uses the exact same packages
 * Documentation for setting up dev environment always up to date
@@ -41,6 +44,7 @@ Using as few tools as possible ...
 ![bg left:40% 80%](docker.svg)
 
 # Docker? (for image builds)
+
 * Security, hard to verify actual contents
 * Performance, poor use of caching
 * Bloated: works in layers, not software features
@@ -97,6 +101,8 @@ CMD /app/app
 
 ---
 
+![bg left:30% 80%](thinking.png)
+
 # Reproducible?
 
 * 2 people using the same docker image => same results
@@ -108,7 +114,39 @@ CMD /app/app
 
 # Nix
 
+![bg left:40% 80%](nixos.svg)
+
+* Cross platform reproducible package manager and build system
+* PhD thesis project by Eelco Dolsta (2006)
+
 ---
+
+![bg left:40% 80%](nixos.svg)
+
+# Works on
+
+* *nix like operating systems
+* WSL
+* MacOS
+* NixOS - distro built entirely on Nix
+
+---
+
+![bg left:40% 80%](nixos.svg)
+
+# Features
+
+* Concurrent and isolated installations of software
+* Atomic upgrades
+* Rollbacks
+
+---
+
+![bg 60%](trinity.avif)
+
+---
+
+# Nix is a programming language
 
 ```nix
   fib = n:
@@ -125,11 +163,44 @@ CMD /app/app
 
 ---
 
+![bg left:35% 80%](bash.png)
+
 # Development shells
 
 * The Nix answer to dev containers
 * Clever use of env variables and symlinks contruct the exact desired environment
-Can be likened to starting a shell ... like bash for example
+* Can be likened to starting a shell ... like bash for example
+
+---
+
+![bg left:25% 80%](lambda.svg)
+
+# Flakes
+
+* Effort to modernize nix projects with better tooling
+* Provides well defined entrypoints for programs and tools
+* Allows pinning of dependencies
+* Essentially a function taking inputs and producing outputs
+
+---
+
+# Basic flake
+
+``` nix
+{
+  description = "A very basic flake";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+  };
+
+  outputs = { self, nixpkgs }:
+    {
+      packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+      packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
+    };
+}
+```
 
 ---
 
@@ -146,17 +217,31 @@ Can be likened to starting a shell ... like bash for example
 
 ---
 
-# Flakes
-
-* Effort to modernize nix projects with better tooling
-* Provides well defined entrypoints for programs and tools
-* Allows pinning of dependencies
-
----
-
 # Home-Manager
 
 * System for generating NixOS like configuration on generic Linux distributions
+
+---
+
+![bg 75%](charlie.jpg)
+
+---
+
+# The good
+
+* Fully determenistic and reproducible software
+  * No hidden gotchas
+* Cross platform package manager
+* Portable development environments
+* Rollbacks, easy to revert since software is described as code
+
+---
+
+# The not so good
+
+* Steep learning curve
+* Documentation (organization) could be better
+* Sometimes hard to migrate software builds to determenistic behavior
 
 ---
 
