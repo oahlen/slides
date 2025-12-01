@@ -69,6 +69,7 @@ COPY . /app
 
 CMD /app/app
 ```
+
 <!-- ubuntu what? -->
 <!-- Chain commands to follow best practices -->
 <!-- apt-get is non determenistic/temporal -->
@@ -109,6 +110,17 @@ CMD /app/app
 
 ---
 
+```nix
+  fib = n:
+    let
+      acc = a: b: i:
+        if i == n then a else acc b (a + b) (i + 1);
+    in
+    if n < 2 then n else acc 0 1 0;
+```
+
+---
+
 ![bg 75%](nixpkgs.png)
 
 ---
@@ -118,6 +130,19 @@ CMD /app/app
 * The Nix answer to dev containers
 * Clever use of env variables and symlinks contruct the exact desired environment
 Can be likened to starting a shell ... like bash for example
+
+---
+
+# Flake projects
+
+* Zed Editor
+* Helix Editor
+* opencode
+* Polars
+* rust-analyzer
+* Cosmic Desktop
+* Hyprland
+* zoxide
 
 ---
 
