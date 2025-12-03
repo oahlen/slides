@@ -6,7 +6,7 @@ Nix tar en väldigt unik väg för att lösa detta problem från grunden med må
 I denna presentation går vi igenom NIx på en hög nivå och hur man skulle kunna komma igång att använda det i sitt dagliga arbete.
 
 ## Selling points
-* cross platfrom package manager
+* cross platform package manager
 * A package manager, a distribution and a language
 * reproducible, atomic, rollbacks
 
@@ -21,7 +21,7 @@ I denna presentation går vi igenom NIx på en hög nivå och hur man skulle kun
 Lends itself poorly for reproducibility
 
 * /lib/libudev.so ... bad
-* /lib/libudev.so.1.6.3 ... better but many unkowns like build flags
+* /lib/libudev.so.1.6.3 ... better but many unknowns like build flags
 
 ## Docker
 * 2 people using the same docker image => same results

@@ -32,6 +32,8 @@ Using as few tools as possible ...
 
 ---
 
+![bg left:30% 80%](container.png)
+
 # Dev containers
 
 * Containerize development environment, packages, environment variables, etc.
@@ -87,7 +89,7 @@ CMD /app/app
 FROM ubuntu # Ubuntu what exactly?
 
 RUN set -eux;
-	apt-get update; # apt-get is non determenistic and temporal
+	apt-get update; # apt-get is non deterministic and temporal
 	apt-get install -y --no-install-recommends \
 		ca-certificates \
 		curl \
@@ -139,10 +141,75 @@ CMD /app/app
 * Concurrent and isolated installations of software
 * Atomic upgrades
 * Rollbacks
+* Reproducible!
+
+---
+
+# How does it work?
+
+---
+
+<!-- _backgroundColor: #ffffff -->
+![bg 80%](fhs.png)
+
+---
+
+![bg left:25% 70%](folder.webp)
+
+# The File System Hierarchy standard
+
+* Lends itself poorly for reproducibility:
+  * /lib/libudev.so ... bad
+  * /lib/libudev.so.1.6.3 ... better but many unknowns like build flags
+  * What if we want different versions of the same library?
+
+---
+
+Instead of ...
+
+```
+/usr/bin/python
+```
+
+... Nix uses a deterministic hash
+
+```
+/nix/store/3lll9y925zz9393sa59h653xik66srjb-python3-3.13.9/bin/python
+```
+
+* Hashes are decided based on build inputs
+* Dynamic linking strictly controlled
+* Programs installations can never interfere with one another
+
+---
+
+![bg 60%](nix-store.png)
 
 ---
 
 ![bg 60%](trinity.avif)
+
+---
+
+# Nix
+
+```nix
+{ pkgs }:
+{
+  services.timesyncd.enable = true;
+
+  programs = {
+    dconf.enable = true;
+    git.lfs.enable = true;
+    ssh.startAgent = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    awscli2
+    duckdb
+  ];
+}
+```
 
 ---
 
@@ -159,6 +226,24 @@ CMD /app/app
 
 ---
 
+# Nix
+
+* Functional and pure
+  * Everything is an expression
+* Lazy
+* Declarative
+* ... it's like Haskell and json had a baby ...
+
+---
+
+# NixPkgs
+
+The largest software repository in the world
+
+https://github.com/NixOS/nixpkgs
+
+---
+
 ![bg 75%](nixpkgs.png)
 
 ---
@@ -168,8 +253,29 @@ CMD /app/app
 # Development shells
 
 * The Nix answer to dev containers
-* Clever use of env variables and symlinks contruct the exact desired environment
+* Clever use of env variables and symlinks construct the exact desired environment
 * Can be likened to starting a shell ... like bash for example
+
+---
+
+# Basic dotnet shell
+
+```nix
+{
+  pkgs ? import <nixpkgs> {}
+}:
+pkgs.mkShell {
+  buildInputs = with pkgs; [
+    (with dotnetCorePackages;
+      combinePackages [
+        sdk_8_0
+        sdk_10_0
+      ])
+    netcoredbg
+    omnisharp-roslyn
+  ];
+}
+```
 
 ---
 
@@ -181,6 +287,7 @@ CMD /app/app
 * Provides well defined entrypoints for programs and tools
 * Allows pinning of dependencies
 * Essentially a function taking inputs and producing outputs
+* Unfortunately not fully stabilized in Nix as of yet
 
 ---
 
@@ -204,22 +311,24 @@ CMD /app/app
 
 ---
 
-# Flake projects
+# Some popular projects using Flakes
 
-* Zed Editor
-* Helix Editor
-* opencode
-* Polars
-* rust-analyzer
-* Cosmic Desktop
-* Hyprland
-* zoxide
+- Zed Editor
+- Helix Editor
+- Open Code
+- Polars
+- rust-analyzer
+- Cosmic Desktop
+- Hyprland
+- zoxide
 
 ---
 
 # Home-Manager
 
-* System for generating NixOS like configuration on generic Linux distributions
+* System for generating NixOS like configurations on generic Linux distributions
+* The "best" way to install packages outside of NixOS
+* Powerful dotfiles manager
 
 ---
 
@@ -229,19 +338,32 @@ CMD /app/app
 
 # The good
 
-* Fully determenistic and reproducible software
-  * No hidden gotchas
+* Fully deterministic and reproducible software
+  * No hidden gotchas, when it works it continues to work
 * Cross platform package manager
 * Portable development environments
 * Rollbacks, easy to revert since software is described as code
 
 ---
 
-# The not so good
+# The less good
 
 * Steep learning curve
 * Documentation (organization) could be better
-* Sometimes hard to migrate software builds to determenistic behavior
+  * Surprisingly good answers from LLMs ...
+* Sometimes hard to migrate software builds to deterministic behavior
+* Storage and network heavy
+
+---
+
+# Goals/Milestones
+
+1. Install and try out Nix on your distro of choice
+2. Install packages from Nix when not available in your regular package manager
+3. Use a Nix dev shell where it makes sense
+4. Use Flakes and Home-Manager to manage your development setup
+5. Try NixOS 😉
+
 
 ---
 

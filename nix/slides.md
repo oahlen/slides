@@ -72,7 +72,7 @@ CMD /app/app
 FROM ubuntu # Ubuntu what exactly?
 
 RUN set -eux;
-	apt-get update; # apt-get is non determenistic and temporal
+	apt-get update; # apt-get is non deterministic and temporal
 	apt-get install -y --no-install-recommends \
 		ca-certificates \
 		curl \
