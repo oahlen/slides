@@ -1,2 +1,4 @@
 .direnv
+out/
+result
 *.html

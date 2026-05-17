@@ -3,7 +3,7 @@ title: Do you want to build a snowflake?
 description: TBD
 author: Oscar Ahlén
 keywords: nix
-theme: default
+theme: tokyonight
 class: invert
 paginate: true
 size: 16:9
@@ -15,11 +15,11 @@ The road to a better dev environment
 
 ---
 
-![bg 100%](my_machine.jpg)
+![bg 100%](assets/images/my_machine.jpg)
 
 ---
 
-![bg left:40% 80%](want.webp)
+![bg left:40% 80%](assets/images/want.webp)
 
 # What do we want?
 
@@ -32,7 +32,7 @@ Using as few tools as possible ...
 
 ---
 
-![bg left:30% 80%](container.png)
+![bg left:30% 80%](assets/images/container.png)
 
 # Dev containers
 
@@ -43,7 +43,7 @@ Using as few tools as possible ...
 
 ---
 
-![bg left:40% 80%](docker.svg)
+![bg left:40% 80%](assets/images/docker.svg)
 
 # Docker? (for image builds)
 
@@ -103,7 +103,7 @@ CMD /app/app
 
 ---
 
-![bg left:30% 80%](thinking.png)
+![bg left:30% 80%](assets/images/thinking.png)
 
 # Reproducible?
 
@@ -116,14 +116,14 @@ CMD /app/app
 
 # Nix
 
-![bg left:40% 80%](nixos.svg)
+![bg left:40% 80%](assets/images/nixos.svg)
 
 * Cross platform reproducible package manager and build system
 * PhD thesis project by Eelco Dolsta (2006)
 
 ---
 
-![bg left:40% 80%](nixos.svg)
+![bg left:40% 80%](assets/images/nixos.svg)
 
 # Works on
 
@@ -134,7 +134,7 @@ CMD /app/app
 
 ---
 
-![bg left:40% 80%](nixos.svg)
+![bg left:40% 80%](assets/images/nixos.svg)
 
 # Features
 
@@ -150,11 +150,11 @@ CMD /app/app
 ---
 
 <!-- _backgroundColor: #ffffff -->
-![bg 80%](fhs.png)
+![bg 80%](assets/images/fhs.png)
 
 ---
 
-![bg left:25% 70%](folder.webp)
+![bg left:25% 70%](assets/images/folder.webp)
 
 # The File System Hierarchy standard
 
@@ -183,11 +183,11 @@ Instead of ...
 
 ---
 
-![bg 60%](nix-store.png)
+![bg 60%](assets/images/nix-store.png)
 
 ---
 
-![bg 60%](trinity.avif)
+![bg 60%](assets/images/trinity.avif)
 
 ---
 
@@ -244,11 +244,11 @@ https://github.com/NixOS/nixpkgs
 
 ---
 
-![bg 75%](nixpkgs.png)
+![bg 75%](assets/images/nixpkgs.png)
 
 ---
 
-![bg left:35% 80%](bash.png)
+![bg left:35% 80%](assets/images/bash.png)
 
 # Development shells
 
@@ -279,7 +279,7 @@ pkgs.mkShell {
 
 ---
 
-![bg left:25% 80%](lambda.svg)
+![bg left:25% 80%](assets/images/lambda.svg)
 
 # Flakes
 
@@ -332,7 +332,7 @@ pkgs.mkShell {
 
 ---
 
-![bg 75%](charlie.jpg)
+![bg 75%](assets/images/charlie.jpg)
 
 ---
 

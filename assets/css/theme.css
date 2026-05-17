@@ -1,0 +1,44 @@
+/*!
+ * Custom Marp theme using the Tokyo Night color palette.
+ *
+ * @theme tokyonight
+ * @author Oscar Ahlén
+ *
+ * @auto-scaling false
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */
+
+@import "tokyonight-light";
+@import "nunito-fonts";
+
+/* Make slide content start at top */
+section:not(:where(.lead)) {
+  display: flex;
+  place-content: safe start;
+}
+
+/* Customize code blocks to give them a scrollbar and prevent overflow */
+pre {
+  max-height: 80%;
+}
+
+pre > code {
+  display: inline-block !important;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto !important;
+}
+
+/* Customize page number style */
+section::after {
+  padding-inline: 0.5rem !important;
+  border-radius: 50%;
+  border: 1px solid var(--mauve);
+  background: var(--lavender);
+}
+
+/* Ensure transparent PNG are actually transparent */
+section img {
+  background-color: transparent !important;
+}

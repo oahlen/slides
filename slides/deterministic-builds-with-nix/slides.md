@@ -3,11 +3,17 @@ title: Deterministiska byggen med Nix
 description: TBD
 author: Oscar Ahlén
 keywords: nix
-theme: default
+theme: tokyonight
 _class: lead
 paginate: true
 size: 16:9
 ---
+
+<style scoped>
+  h1 {
+    text-decoration: underline;
+  }
+</style>
 
 # Deterministiska byggen med Nix
 
@@ -15,7 +21,7 @@ How I learned to love the dev shell 🤘
 
 ---
 
-![bg 50%](my_machine.jpg)
+![bg 33%](assets/images/my_machine.jpg)
 
 ---
 
@@ -27,7 +33,7 @@ How I learned to love the dev shell 🤘
 
 ---
 
-![bg left:40% 80%](docker.svg)
+![bg left:33% w:300](assets/images/docker.svg)
 
 # Docker? (for image builds)
 * Security, hard to verify actual contents
@@ -101,7 +107,7 @@ CMD /app/app
 
 # Nix package manager
 
-![bg left:40% 80%](nixos-original.svg)
+![bg left:40% 80%](assets/images/nixos-original.svg)
 
 * Cross platform reproducible package manager and build system
   * (*nix, MacOS, WSL)
@@ -169,7 +175,7 @@ pkgs.mkShell {
 
 ---
 
-![bg 75%](nixpkgs.png)
+![bg 75%](assets/images/nixpkgs.png)
 
 ---
 
@@ -179,7 +185,7 @@ section {
 }
 </style>
 
-![bg 75%](nix-github.png)
+![bg 75%](assets/images/nix-github.png)
 
 ---
 
@@ -187,7 +193,7 @@ section {
 
 ---
 
-![bg 80%](fhs.png)
+![bg 80%](assets/images/fhs.png)
 
 ---
 
@@ -214,7 +220,7 @@ section {
 
 ---
 
-![bg 100%](nix-expression.png)
+![bg 100%](assets/images/nix-expression.png)
 
 ---
 
@@ -254,15 +260,15 @@ pkgs.buildDotnetModule {
 
 ---
 
-![bg 100%](nix-instantiate.png)
+![bg 100%](assets/images/nix-instantiate.png)
 
 ---
 
-![bg 60%](nix-store-1.png)
+![bg 60%](assets/images/nix-store-1.png)
 
 ---
 
-![bg 80%](user-environments.png)
+![bg 80%](assets/images/user-environments.png)
 
 <!-- Demo time -->
 
@@ -279,7 +285,7 @@ pkgs.buildDotnetModule {
 
 ---
 
-![bg 80%](charlie.jpg)
+![bg 80%](assets/images/charlie.jpg)
 
 ---
 
@@ -304,4 +310,4 @@ pkgs.buildDotnetModule {
 
 ---
 
-![bg 30%](rabbit_hole.jpg)
+![bg 30%](assets/images/rabbit_hole.jpg)
