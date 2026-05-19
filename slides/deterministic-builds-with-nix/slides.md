@@ -5,10 +5,10 @@ author: Oscar Ahlén
 keywords:
   - nix
 theme: tokyonight
-_class: lead
-paginate: true
 size: 16:9
-transition: fade
+transition: fade 0.2s
+paginate: true
+_class: lead
 ---
 
 <style scoped>
@@ -29,10 +29,10 @@ How I learned to love the dev shell 🤘
 
 # Dev containers
 
-- Containerize development environment, packages, environment variables, etc.
-- Every developer (preferably) uses the exact same packages
-- Documentation for setting up dev environment always up to date
-  - Fast onboarding of new devs
+* Containerize development environment, packages, environment variables, etc.
+* Every developer (preferably) uses the exact same packages
+* Documentation for setting up dev environment always up to date
+  * Fast onboarding of new devs
 
 ---
 
@@ -40,11 +40,11 @@ How I learned to love the dev shell 🤘
 
 # Docker? (for image builds)
 
-- Security, hard to verify actual contents
-- Performance, poor use of caching
-- Bloated: works in layers, not software features
-- Requires internet access
-  - No hermetic builds ... more on that later ...
+* Security, hard to verify actual contents
+* Performance, poor use of caching
+* Bloated: works in layers, not software features
+* Requires internet access
+  * No hermetic builds ... more on that later ...
 
 <!-- Poor software bill of materials -->
 <!-- Caching, Nix does a much better job -->
@@ -104,10 +104,10 @@ CMD /app/app
 
 # Reproducible?
 
-- 2 people using the same docker image => same results
-- 2 people building the same Dockerfile => (very often) different results
-- Non dev container scenarios even worse
-  - Different distros, slight differences in libraries/build flags etc.
+* 2 people using the same docker image => same results
+* 2 people building the same Dockerfile => (very often) different results
+* Non dev container scenarios even worse
+  * Different distros, slight differences in libraries/build flags etc.
 
 ---
 
@@ -115,13 +115,13 @@ CMD /app/app
 
 ![bg left:40% 80%](assets/images/nixos-original.svg)
 
-- Cross platform reproducible package manager and build system
-  - (\*nix, MacOS, WSL)
-- PhD thesis project by Eelco Dolsta (2006)
-  - First stable release in 2012
-- Atomic upgrades
-- Rollbacks
-- Concurrent installations
+* Cross platform reproducible package manager and build system
+  * (\*nix, MacOS, WSL)
+* PhD thesis project by Eelco Dolsta (2006)
+  * First stable release in 2012
+* Atomic upgrades
+* Rollbacks
+* Concurrent installations
 
 <!-- Those who use MacOS check out nix-darwin -->
 
@@ -129,11 +129,11 @@ CMD /app/app
 
 # Nix - language
 
-- Functional and pure
-  - Everything is an expression
-- Lazy
-- Declarative
-- Domain specific ... Haskell like
+* Functional and pure
+  * Everything is an expression
+* Lazy
+* Declarative
+* Domain specific ... Haskell like
 
 <!-- Domain specific but turing complete, not a suitable as a general purpose language -->
 
@@ -176,10 +176,10 @@ pkgs.mkShell {
 
 # NixOS - distribution
 
-- Full GNU/Linux distribution implemented by nix
-- MSc thesis project by Armijn Hemel (2006)
-- Uses nix as both a package and configuration manager
-- Fully leverages the nixpkgs monorepo ...
+* Full GNU/Linux distribution implemented by nix
+* MSc thesis project by Armijn Hemel (2006)
+* Uses nix as both a package and configuration manager
+* Fully leverages the nixpkgs monorepo ...
 
 ---
 
@@ -207,22 +207,22 @@ section {
 
 # FHS
 
-- Lends itself poorly for reproducibility:
-  - /lib/libudev.so ... bad
-  - /lib/libudev.so.1.6.3 ... better but many unknowns like build flags
-  - What if we want different versions of the same library?
+* Lends itself poorly for reproducibility:
+  * /lib/libudev.so ... bad
+  * /lib/libudev.so.1.6.3 ... better but many unknowns like build flags
+  * What if we want different versions of the same library?
 
 ---
 
 # Nix build process
 
-- Compute a package derivation based on some nix expression ex `default.nix`. This file includes:
-  - mentions of all the files and other packages that will be required during the build
-  - build instructions for actually building the package,
-  - some meta-information about the package,
-  - a store path (prefix) under which the package will be installed
-    - /nix/store/<hash>-<name>-<version>
-    - ex. **/nix/store/d29dgx2kc94dlq8h85phzlx01x7ajhjv-firefox-118.0.1**/bin/firefox
+* Compute a package derivation based on some nix expression ex `default.nix`. This file includes:
+  * mentions of all the files and other packages that will be required during the build
+  * build instructions for actually building the package,
+  * some meta-information about the package,
+  * a store path (prefix) under which the package will be installed
+    * /nix/store/\<hash\>-\<name\>-\<version\>
+    * ex. **/nix/store/d29dgx2kc94dlq8h85phzlx01x7ajhjv-firefox-118.0.1**/bin/firefox
 
 <!-- 160 bit hash used for path (32 chars) -->
 <!-- derivation + all inputs determines the hash, secret sauce in caching -->
@@ -286,11 +286,11 @@ pkgs.buildDotnetModule {
 
 # Pros
 
-- Reproducibility ... duh
-- Binary caching, hash can be calculated beforehand
-- Multiple version simultaneously
-- Hermetic/isolated builds
-- Small footprint/backups
+* Reproducibility ... duh
+* Binary caching, hash can be calculated beforehand
+* Multiple version simultaneously
+* Hermetic/isolated builds
+* Small footprint/backups
 
 <!-- Meme slide ahead -->
 
@@ -302,24 +302,24 @@ pkgs.buildDotnetModule {
 
 # Cons?
 
-- Steep learning curve
-  - New toolchain
-  - New language
-- Many existing tools/projects may not be suitable for reproducibility in current form
-- Accumulates a lot of packages/versions
-  - Garbage collection included in tooling 🗑️
-- Documentation (organization) could be better
-- Very powerful ... but more powerful if everyone in a team uses it
+* Steep learning curve
+  * New toolchain
+  * New language
+* Many existing tools/projects may not be suitable for reproducibility in current form
+* Accumulates a lot of packages/versions
+  * Garbage collection included in tooling 🗑️
+* Documentation (organization) could be better
+* Very powerful ... but more powerful if everyone in a team uses it
 
 ---
 
 # Where to go from here?
 
-- Install nix from `https://nixos.org`
-- Read some docs: `https://nix.dev` is a very good resource alongside the official nix manual
-- Use nix (`nix-env` + `nix-channel`) to install packages not present on your current distribution
-- Play around with `nix-shell` and create some isolated dev shells
-- Check out `home-manager` to manage both user packages and dotfiles
+* Install nix from `https://nixos.org`
+* Read some docs: `https://nix.dev` is a very good resource alongside the official nix manual
+* Use nix (`nix-env` + `nix-channel`) to install packages not present on your current distribution
+* Play around with `nix-shell` and create some isolated dev shells
+* Check out `home-manager` to manage both user packages and dotfiles
 
 ---
 
