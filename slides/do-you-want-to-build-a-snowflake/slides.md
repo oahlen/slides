@@ -4,7 +4,7 @@ description: TBD
 author: Oscar Ahlén
 keywords: nix
 theme: tokyonight
-class: invert
+class: lead
 paginate: true
 size: 16:9
 ---
