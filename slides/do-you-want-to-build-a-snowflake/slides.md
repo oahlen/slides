@@ -1,13 +1,22 @@
 ---
 title: Do you want to build a snowflake?
-description: TBD
+description: The road to a better dev environment
 author: Oscar Ahlén
-keywords: nix
+keywords:
+  - nix
+  - flakes
 theme: tokyonight
 class: lead
 paginate: true
 size: 16:9
+transition: fade
 ---
+
+<style scoped>
+  h1 {
+    text-decoration: underline;
+  }
+</style>
 
 # Do you want to build a snow(flake)?
 

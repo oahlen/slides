@@ -1,12 +1,14 @@
 ---
-title: Deterministiska byggen med Nix
-description: TBD
+title: Deterministic builds with Nix
+description: How I learned to love the dev shell
 author: Oscar Ahlén
-keywords: nix
+keywords:
+  - nix
 theme: tokyonight
 _class: lead
 paginate: true
 size: 16:9
+transition: fade
 ---
 
 <style scoped>
