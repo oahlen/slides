@@ -215,7 +215,7 @@
   --fgColor-danger: #8c4351;
   --fgColor-default: #2b3048;
   --fgColor-done: #5a3e8e;
-  --fgColor-muted: #343B58;
+  --fgColor-muted: #343b58;
   --fgColor-success: #385f0d;
   /* Marp default theme variables */
   --h1-color: #8c4351;
@@ -302,6 +302,6 @@ section:where(.lead) table {
 }
 
 blockquote {
-    background: #d7d9e2;
-    border-color: #006c86;
+  background: #d7d9e2;
+  border-color: #006c86;
 }

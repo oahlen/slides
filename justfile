@@ -4,6 +4,14 @@ set positional-arguments
 help:
     @just --list --unsorted
 
-# Build and switch to the specified user environment
+# Serve slides
 @serve:
     marp --server . --watch
+
+# Build slides
+@build:
+    ./build.sh
+
+# Format files
+@fmt:
+    prettier . -w

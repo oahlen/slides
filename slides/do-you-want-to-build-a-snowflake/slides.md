@@ -23,12 +23,12 @@ The road to a better dev environment
 
 # What do we want?
 
-* Access to as many (up to date) packages/SDKs/toolchains as possible
-* Have a way of restoring the exact same package state on multiple machines
-  * Including config/env variables
-* Way of keeping inventory of what we use
-  * Both a resource and security concern
-Using as few tools as possible ...
+- Access to as many (up to date) packages/SDKs/toolchains as possible
+- Have a way of restoring the exact same package state on multiple machines
+  - Including config/env variables
+- Way of keeping inventory of what we use
+  - Both a resource and security concern
+    Using as few tools as possible ...
 
 ---
 
@@ -36,10 +36,10 @@ Using as few tools as possible ...
 
 # Dev containers
 
-* Containerize development environment, packages, environment variables, etc.
-* Every developer (preferably) uses the exact same packages
-* Documentation for setting up dev environment always up to date
-  * Fast onboarding of new devs
+- Containerize development environment, packages, environment variables, etc.
+- Every developer (preferably) uses the exact same packages
+- Documentation for setting up dev environment always up to date
+  - Fast onboarding of new devs
 
 ---
 
@@ -47,10 +47,10 @@ Using as few tools as possible ...
 
 # Docker? (for image builds)
 
-* Security, hard to verify actual contents
-* Performance, poor use of caching
-* Bloated: works in layers, not software features
-* Requires internet access to work
+- Security, hard to verify actual contents
+- Performance, poor use of caching
+- Bloated: works in layers, not software features
+- Requires internet access to work
 
 <!-- Poor software bill of materials -->
 <!-- Caching, Nix does a much better job -->
@@ -107,10 +107,10 @@ CMD /app/app
 
 # Reproducible?
 
-* 2 people using the same docker image => same results
-* 2 people building the same Dockerfile => (very often) different results
-* Non dev container scenarios even worse
-  * Different distros, slight differences in libraries/build flags etc.
+- 2 people using the same docker image => same results
+- 2 people building the same Dockerfile => (very often) different results
+- Non dev container scenarios even worse
+  - Different distros, slight differences in libraries/build flags etc.
 
 ---
 
@@ -118,8 +118,8 @@ CMD /app/app
 
 ![bg left:40% 80%](assets/images/nixos.svg)
 
-* Cross platform reproducible package manager and build system
-* PhD thesis project by Eelco Dolsta (2006)
+- Cross platform reproducible package manager and build system
+- PhD thesis project by Eelco Dolsta (2006)
 
 ---
 
@@ -127,10 +127,10 @@ CMD /app/app
 
 # Works on
 
-* *nix like operating systems
-* WSL
-* MacOS
-* NixOS - distro built entirely on Nix
+- \*nix like operating systems
+- WSL
+- MacOS
+- NixOS - distro built entirely on Nix
 
 ---
 
@@ -138,10 +138,10 @@ CMD /app/app
 
 # Features
 
-* Concurrent and isolated installations of software
-* Atomic upgrades
-* Rollbacks
-* Reproducible!
+- Concurrent and isolated installations of software
+- Atomic upgrades
+- Rollbacks
+- Reproducible!
 
 ---
 
@@ -150,6 +150,7 @@ CMD /app/app
 ---
 
 <!-- _backgroundColor: #ffffff -->
+
 ![bg 80%](assets/images/fhs.png)
 
 ---
@@ -158,10 +159,10 @@ CMD /app/app
 
 # The File System Hierarchy standard
 
-* Lends itself poorly for reproducibility:
-  * /lib/libudev.so ... bad
-  * /lib/libudev.so.1.6.3 ... better but many unknowns like build flags
-  * What if we want different versions of the same library?
+- Lends itself poorly for reproducibility:
+  - /lib/libudev.so ... bad
+  - /lib/libudev.so.1.6.3 ... better but many unknowns like build flags
+  - What if we want different versions of the same library?
 
 ---
 
@@ -177,9 +178,9 @@ Instead of ...
 /nix/store/3lll9y925zz9393sa59h653xik66srjb-python3-3.13.9/bin/python
 ```
 
-* Hashes are decided based on build inputs
-* Dynamic linking strictly controlled
-* Programs installations can never interfere with one another
+- Hashes are decided based on build inputs
+- Dynamic linking strictly controlled
+- Programs installations can never interfere with one another
 
 ---
 
@@ -228,11 +229,11 @@ Instead of ...
 
 # Nix
 
-* Functional and pure
-  * Everything is an expression
-* Lazy
-* Declarative
-* ... it's like Haskell and json had a baby ...
+- Functional and pure
+  - Everything is an expression
+- Lazy
+- Declarative
+- ... it's like Haskell and json had a baby ...
 
 ---
 
@@ -252,9 +253,9 @@ https://github.com/NixOS/nixpkgs
 
 # Development shells
 
-* The Nix answer to dev containers
-* Clever use of env variables and symlinks construct the exact desired environment
-* Can be likened to starting a shell ... like bash for example
+- The Nix answer to dev containers
+- Clever use of env variables and symlinks construct the exact desired environment
+- Can be likened to starting a shell ... like bash for example
 
 ---
 
@@ -283,17 +284,17 @@ pkgs.mkShell {
 
 # Flakes
 
-* Effort to modernize nix projects with better tooling
-* Provides well defined entrypoints for programs and tools
-* Allows pinning of dependencies
-* Essentially a function taking inputs and producing outputs
-* Unfortunately not fully stabilized in Nix as of yet
+- Effort to modernize nix projects with better tooling
+- Provides well defined entrypoints for programs and tools
+- Allows pinning of dependencies
+- Essentially a function taking inputs and producing outputs
+- Unfortunately not fully stabilized in Nix as of yet
 
 ---
 
 # Basic flake
 
-``` nix
+```nix
 {
   description = "A very basic flake";
 
@@ -326,9 +327,9 @@ pkgs.mkShell {
 
 # Home-Manager
 
-* System for generating NixOS like configurations on generic Linux distributions
-* The "best" way to install packages outside of NixOS
-* Powerful dotfiles manager
+- System for generating NixOS like configurations on generic Linux distributions
+- The "best" way to install packages outside of NixOS
+- Powerful dotfiles manager
 
 ---
 
@@ -338,21 +339,21 @@ pkgs.mkShell {
 
 # The good
 
-* Fully deterministic and reproducible software
-  * No hidden gotchas, when it works it continues to work
-* Cross platform package manager
-* Portable development environments
-* Rollbacks, easy to revert since software is described as code
+- Fully deterministic and reproducible software
+  - No hidden gotchas, when it works it continues to work
+- Cross platform package manager
+- Portable development environments
+- Rollbacks, easy to revert since software is described as code
 
 ---
 
 # The less good
 
-* Steep learning curve
-* Documentation (organization) could be better
-  * Surprisingly good answers from LLMs ...
-* Sometimes hard to migrate software builds to deterministic behavior
-* Storage and network heavy
+- Steep learning curve
+- Documentation (organization) could be better
+  - Surprisingly good answers from LLMs ...
+- Sometimes hard to migrate software builds to deterministic behavior
+- Storage and network heavy
 
 ---
 
@@ -363,7 +364,6 @@ pkgs.mkShell {
 3. Use a Nix dev shell where it makes sense
 4. Use Flakes and Home-Manager to manage your development setup
 5. Try NixOS 😉
-
 
 ---
 

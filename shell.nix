@@ -7,5 +7,6 @@
 pkgs.mkShell {
   buildInputs = [
     pkgs.marp-cli
+    pkgs.prettier
   ];
 }

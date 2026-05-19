@@ -300,6 +300,6 @@ section:where(.lead) table {
 }
 
 blockquote {
-    background: #212433;
-    border-color: #7dcfff;
+  background: #212433;
+  border-color: #7dcfff;
 }
