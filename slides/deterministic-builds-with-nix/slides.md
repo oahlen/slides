@@ -1,5 +1,5 @@
 ---
-title: Deterministic builds with Nix
+title: Deterministic Builds with Nix
 description: How I learned to love the dev shell
 author: Oscar Ahlén
 keywords:
@@ -17,7 +17,7 @@ _class: lead
   }
 </style>
 
-# Deterministiska byggen med Nix
+# Deterministic Builds with Nix
 
 How I learned to love the dev shell 🤘
 

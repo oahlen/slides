@@ -1,5 +1,5 @@
 ---
-title: Do you want to build a snowflake?
+title: Do You Want to Build a Snowflake?
 description: The road to a better dev environment
 author: Oscar Ahlén
 keywords:
@@ -18,7 +18,7 @@ _class: lead
   }
 </style>
 
-# Do you want to build a snow(flake)?
+# Do You Want to Build a Snow(flake)?
 
 The road to a better dev environment
 
