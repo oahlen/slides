@@ -198,15 +198,15 @@
 :root {
   /* github-markdown-css variables */
   --bgColor-attention-muted: rgba(254, 100, 11, 0.15);
-  --bgColor-default: #f0f1f4;
-  --bgColor-muted: #e6e7ed;
-  --bgColor-neutral-muted: #d7d9e2;
+  --bgColor-default: #e6e7ed;
+  --bgColor-muted: #d7d9e2;
+  --bgColor-neutral-muted: #c8cbd8;
   --borderColor-accent-emphasis: #8c4351;
   --borderColor-attention-emphasis: #965027;
   --borderColor-danger-emphasis: #8c4351;
-  --borderColor-default: #d7d9e2;
+  --borderColor-default: #c8cbd8;
   --borderColor-done-emphasis: #5a3e8e;
-  --borderColor-muted: #e6e7ed;
+  --borderColor-muted: #d7d9e2;
   --borderColor-success-emphasis: #385f0d;
   --fgColor-accent: #8c4351;
   --fgColor-attention: #8f5e15;
@@ -224,6 +224,7 @@
 
 section h1 {
   color: #8c4351;
+  font-weight: 700;
 }
 section h2 {
   color: #8f5e15;
