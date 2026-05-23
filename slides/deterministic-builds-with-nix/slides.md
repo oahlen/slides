@@ -11,12 +11,6 @@ paginate: true
 _class: lead
 ---
 
-<style scoped>
-  h1 {
-    text-decoration: underline;
-  }
-</style>
-
 # Deterministic Builds with Nix
 
 How I learned to love the dev shell 🤘

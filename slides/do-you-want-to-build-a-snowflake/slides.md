@@ -12,12 +12,6 @@ paginate: true
 _class: lead
 ---
 
-<style scoped>
-  h1 {
-    text-decoration: underline;
-  }
-</style>
-
 # Do You Want to Build a Snow(flake)?
 
 The road to a better dev environment
