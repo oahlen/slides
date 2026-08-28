@@ -5,7 +5,7 @@ author: Oscar Ahlén
 keywords:
   - nix
   - flakes
-theme: tokyonight
+theme: aurora-dark
 size: 16:9
 transition: fade 0.2s
 paginate: true

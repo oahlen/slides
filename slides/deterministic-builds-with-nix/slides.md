@@ -4,7 +4,7 @@ description: How I learned to love the dev shell
 author: Oscar Ahlén
 keywords:
   - nix
-theme: tokyonight
+theme: aurora-light
 size: 16:9
 transition: fade 0.2s
 paginate: true

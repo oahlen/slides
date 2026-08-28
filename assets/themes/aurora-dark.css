@@ -1,6 +1,6 @@
 /* https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html */
 /*!
- * @theme tokyonight-light
+ * @theme aurora-dark
  * @author Oscar Ahlén
  *
  * @auto-scaling true
@@ -8,266 +8,304 @@
  * @size 4:3 960px 720px
  */
 @import-theme "default";
+@import "ubuntu-sans-fonts";
+
+/* Make slide content start at top */
+section:not(:where(.lead)) {
+  display: flex;
+  place-content: safe start;
+}
+
+/* Customize code blocks to give them a scrollbar and prevent overflow */
+pre {
+  max-height: 80%;
+}
+
+pre > code {
+  display: inline-block !important;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto !important;
+}
+
+/* Ensure transparent PNG are actually transparent */
+section img {
+  background-color: transparent !important;
+}
+
 &.hljs {
-  color: #2b3048;
-  background: #f0f1f4;
+  color: #c6cbdd;
+  background: #1c1f26;
 }
 
 .hljs-keyword {
-  color: #5a3e8e;
+  color: #d2a6f2;
 }
 
 .hljs-built_in {
-  color: #006c86;
+  color: #89d7e6;
 }
 
 .hljs-type {
-  color: #2b3048;
+  color: #e6c789;
 }
 
 .hljs-literal {
-  color: #965027;
+  color: #ffac70;
 }
 
 .hljs-number {
-  color: #965027;
+  color: #ffac70;
 }
 
 .hljs-operator {
-  color: #0f4b6e;
+  color: #89d7e6;
 }
 
 .hljs-punctuation {
-  color: #40434f;
+  color: #c6cbdd;
 }
 
 .hljs-property {
-  color: #33635c;
+  color: #89d7e6;
 }
 
 .hljs-regexp {
-  color: #0f4b6e;
+  color: #d2a6f2;
 }
 
 .hljs-string {
-  color: #385f0d;
+  color: #a6d279;
 }
 
 .hljs-char.escape_ {
-  color: #0f4b6e;
+  color: #a6d279;
 }
 
 .hljs-subst {
-  color: #6c6e75;
+  color: #acb4cd;
 }
 
 .hljs-symbol {
-  color: #006c86;
+  color: #89d7e6;
 }
 
 .hljs-variable {
-  color: #2b3048;
+  color: #d2a6f2;
 }
 
 .hljs-variable.language_ {
-  color: #5a3e8e;
+  color: #d2a6f2;
 }
 
 .hljs-variable.constant_ {
-  color: #965027;
+  color: #ffac70;
 }
 
 .hljs-title {
-  color: #8c4351;
+  color: #89b6f5;
 }
 
 .hljs-title.class_ {
-  color: #2b3048;
+  color: #e6c789;
 }
 
 .hljs-title.function_ {
-  color: #2959aa;
+  color: #89b6f5;
 }
 
 .hljs-params {
-  color: #8f5e15;
+  color: #ffac70;
 }
 
 .hljs-comment {
-  color: #6c6e75;
+  color: #7e86a0;
 }
 
 .hljs-doctag {
-  color: #8c4351;
+  color: #f5899b;
 }
 
 .hljs-meta {
-  color: #006c86;
+  color: #ffac70;
 }
 
 .hljs-section {
-  color: #2959aa;
+  color: #89b6f5;
 }
 
 .hljs-tag {
-  color: #2959aa;
+  color: #89d7e6;
 }
 
 .hljs-name {
-  color: #8839ef;
+  color: #d2a6f2;
 }
 
 .hljs-attr {
-  color: #33635c;
+  color: #89d7e6;
 }
 
 .hljs-attribute {
-  color: #40a02b;
+  color: #a6d279;
 }
 
 .hljs-bullet {
-  color: #2b3048;
+  color: #89d7e6;
 }
 
 .hljs-code {
-  color: #40a02b;
+  color: #a6d279;
 }
 
 .hljs-emphasis {
-  color: #d20f39;
+  color: #f5899b;
   font-style: italic;
 }
 
 .hljs-strong {
-  color: #d20f39;
+  color: #f5899b;
   font-weight: bold;
 }
 
 .hljs-formula {
-  color: #179299;
+  color: #89d7e6;
 }
 
 .hljs-link {
-  color: #209fb5;
+  color: #89b6f5;
   font-style: italic;
 }
 
 .hljs-quote {
-  color: #40a02b;
+  color: #a6d279;
   font-style: italic;
 }
 
 .hljs-selector-tag {
-  color: #df8e1d;
+  color: #e6c789;
 }
 
 .hljs-selector-id {
-  color: #1e66f5;
+  color: #89b6f5;
 }
 
 .hljs-selector-class {
-  color: #179299;
+  color: #89d7e6;
 }
 
 .hljs-selector-attr {
-  color: #8839ef;
+  color: #d2a6f2;
 }
 
 .hljs-selector-pseudo {
-  color: #179299;
+  color: #89d7e6;
 }
 
 .hljs-template-tag {
-  color: #dd7878;
+  color: #f5899b;
 }
 
 .hljs-template-variable {
-  color: #dd7878;
+  color: #f5899b;
 }
 
 .hljs-addition {
-  color: #385f0d;
-  background: rgba(64, 160, 43, 0.15);
+  color: #a6d279;
+  background: rgba(166, 210, 121, 0.15);
 }
 
 .hljs-deletion {
-  color: #8c4351;
-  background: rgba(210, 15, 57, 0.15);
+  color: #f5899b;
+  background: rgba(245, 137, 155, 0.15);
 }
 
 :root {
   /* github-markdown-css variables */
-  --bgColor-attention-muted: rgba(254, 100, 11, 0.15);
-  --bgColor-default: #e6e7ed;
-  --bgColor-muted: #d7d9e2;
-  --bgColor-neutral-muted: #c8cbd8;
-  --borderColor-accent-emphasis: #8c4351;
-  --borderColor-attention-emphasis: #965027;
-  --borderColor-danger-emphasis: #8c4351;
-  --borderColor-default: #c8cbd8;
-  --borderColor-done-emphasis: #5a3e8e;
-  --borderColor-muted: #d7d9e2;
-  --borderColor-success-emphasis: #385f0d;
-  --fgColor-accent: #8c4351;
-  --fgColor-attention: #8f5e15;
-  --fgColor-danger: #8c4351;
-  --fgColor-default: #2b3048;
-  --fgColor-done: #5a3e8e;
-  --fgColor-muted: #343b58;
-  --fgColor-success: #385f0d;
+  --bgColor-attention-muted: rgba(230, 199, 137, 0.15);
+  --bgColor-default: #1c1f26;
+  --bgColor-muted: #252832;
+  --bgColor-neutral-muted: #2e323e;
+  --borderColor-accent-emphasis: #f5899b;
+  --borderColor-attention-emphasis: #e6c789;
+  --borderColor-danger-emphasis: #f5899b;
+  --borderColor-default: #2e323e;
+  --borderColor-done-emphasis: #d2a6f2;
+  --borderColor-muted: #2e323e;
+  --borderColor-success-emphasis: #a6d279;
+  --fgColor-accent: #f5899b;
+  --fgColor-attention: #e6c789;
+  --fgColor-danger: #f5899b;
+  --fgColor-default: #c6cbdd;
+  --fgColor-done: #d2a6f2;
+  --fgColor-muted: #acb4cd;
+  --fgColor-success: #a6d279;
   /* Marp default theme variables */
-  --h1-color: #8c4351;
-  --header-footer-color: #40434f;
-  --heading-strong-color: #8c4351;
-  --paginate-color: #6c6e75;
+  --h1-color: #f5899b;
+  --header-footer-color: #7e86a0;
+  --heading-strong-color: #f5899b;
+  --paginate-color: #7e86a0;
 }
 
 section h1 {
-  color: #8c4351;
+  color: #f5899b;
   font-weight: 700;
 }
+
 section h2 {
-  color: #8f5e15;
+  color: #ffac70;
 }
+
 section h3 {
-  color: #385f0d;
+  color: #e6c789;
 }
+
 section h4 {
-  color: #006c86;
+  color: #a6d279;
 }
+
 section h5 {
-  color: #2959aa;
+  color: #89d7e6;
 }
+
 section h6 {
-  color: #5a3e8e;
+  color: #d2a6f2;
 }
+
 section a {
-  color: #33635c;
+  color: #89b6f5;
 }
+
 section table thead th {
   background: var(--bgColor-muted);
   color: var(--fgColor-muted);
 }
+
 section table tbody > tr:nth-child(2n) td,
 section table tbody > tr:nth-child(2n) th {
   background: var(--bgColor-default);
   color: var(--fgColor-default);
 }
+
 section .markdown-alert.markdown-alert-note {
-  border-left-color: #2959aa;
+  border-left-color: #89b6f5;
 }
+
 section .markdown-alert.markdown-alert-note .markdown-alert-title {
-  color: #2959aa;
+  color: #89b6f5;
 }
+
 section {
   /* Lead class taken from Marp builtin Gaia theme */
 }
+
 section:where(.lead) {
   place-content: safe center center;
   /* Definitions for classic behavior: Users can adopt flex centering by tweaking style `section.lead { display: flex }` */
   flex-flow: column nowrap;
   align-items: stretch;
 }
+
 section:where(.lead) h1,
 section:where(.lead) h2,
 section:where(.lead) h3,
@@ -276,12 +314,15 @@ section:where(.lead) h5,
 section:where(.lead) h6 {
   text-align: center;
 }
+
 section:where(.lead) {
   /* stylelint-disable-next-line no-descending-specificity */
 }
+
 section:where(.lead) p {
   text-align: center;
 }
+
 section:where(.lead) blockquote > h1,
 section:where(.lead) blockquote > h2,
 section:where(.lead) blockquote > h3,
@@ -291,16 +332,18 @@ section:where(.lead) blockquote > h6,
 section:where(.lead) blockquote > p {
   text-align: left;
 }
+
 section:where(.lead) ul > li > p,
 section:where(.lead) ol > li > p {
   text-align: left;
 }
+
 section:where(.lead) table {
   margin-left: auto;
   margin-right: auto;
 }
 
 blockquote {
-  background: #d7d9e2;
-  border-color: #006c86;
+  background: #252832;
+  border-color: #89d7e6;
 }
