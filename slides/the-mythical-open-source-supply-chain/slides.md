@@ -7,7 +7,7 @@ keywords:
   - security
   - sustainability
   - AI
-theme: aurora-light
+theme: aurora-dark
 size: 16:9
 transition: fade 0.2s
 paginate: true
@@ -16,7 +16,7 @@ _class: lead
 
 <!-- _class: lead -->
 
-# Vem använder Open Source?
+# The Mythical Open Source Supply Chain
 
 ---
 
@@ -24,15 +24,42 @@ _class: lead
 
 ---
 
-# The Mythical Open Source Supply Chain
-
----
-
 <!-- _class: lead -->
 
 # Vem använder Open Source?
 
-![bg](https://unsplash.com/photos/aerial-photo-of-cargo-crates-fN603qcEA7g)
+---
+
+![bg 40%](assets/images/modern-infrastructure.png)
+
+<!-- Classic from XKCD -->
+
+---
+
+![bg 40%](assets/images/modern-infrastructure-2.png)
+
+---
+
+![bg](assets/images/security.jpg)
+
+---
+
+![bg](assets/images/ai.jpg)
+
+---
+
+![bg](assets/images/typing.jpg)
+
+---
+
+## Open Source finns överallt
+
+Du använder det varje dag
+
+* Din telefon kör Linux (Android) eller en BSD-baserad kärna (iOS)
+* Din bank kör open source databaser och web servrar
+* Your car's infotainment system, your router, your smart TV
+* The internet itself runs on open source (DNS, HTTP, TLS, BGP…)
 
 ---
 
