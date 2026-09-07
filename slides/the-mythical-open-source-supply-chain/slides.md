@@ -12,11 +12,22 @@ size: 16:9
 transition: fade 0.2s
 paginate: true
 _class: lead
+style: |
+  section.bg-title h1 {
+    display: inline-block;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.2em 0.5em;
+    border-radius: 0.2em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  }
 ---
 
-<!-- _class: lead -->
+<!-- _class: lead bg-title -->
 
 # The Mythical Open Source Supply Chain
+
+![bg](assets/images/crates.jpg)
 
 ---
 
@@ -43,7 +54,21 @@ Du använder det varje dag
 
 <!-- _class: lead -->
 
+<style scoped>
+p {
+  font-size: 1.5em;
+}
+</style>
+
 **There is no "opting out"**
+
+<!-- Open Source is the de facto standard for building modern systems -->
+
+---
+
+![bg 40%](assets/images/modern-infrastructure.png)
+
+<!-- Classic from XKCD -->
 
 ---
 
@@ -120,15 +145,19 @@ furnished to do so, subject to the following conditions ...
 
 ---
 
+## Vilken licens gäller?
+
 ![bg 80%](assets/images/licenses.jpg)
 
 <!-- License types -->
 
 ---
 
-<!-- Part 2 - Supply Chain Myth -->
+<!-- _class: lead bg-title -->
 
-![bg](assets/images/crates.jpg)
+# The Supply Chain Myth
+
+![bg 100%](assets/images/containers.jpg)
 
 ---
 
@@ -155,12 +184,6 @@ SOFTWARE.
 
 ---
 
-![bg 40%](assets/images/modern-infrastructure.png)
-
-<!-- Classic from XKCD -->
-
----
-
 <!-- _class: lead -->
 
 Du har ingen levernatör men kanske en **välgörare**
@@ -169,16 +192,12 @@ Du har ingen levernatör men kanske en **välgörare**
 
 ---
 
-![bg 40%](assets/images/modern-infrastructure-2.png)
-
----
-
 ## Jämförelse
 
 | Supply chain | Open source |
 |---|---|
 | Kontraktsbaserat | Frivilligt bidrag |
-| Garanti och ansvar | - |
+| Garanti och SLA | - |
 | Kvalitetskontroll | Best-effort, god vilja |
 | Jag betalar, du levererar | Jag tar, du ger |
 
@@ -190,9 +209,11 @@ Du har ingen levernatör men kanske en **välgörare**
 
 ---
 
----
-
 <!-- Part 3 - Security Perspective -->
+
+<!-- _class: lead bg-title -->
+
+# Open Source och Säkerhet
 
 ![bg](assets/images/security.jpg)
 
@@ -218,51 +239,49 @@ Du har ingen levernatör men kanske en **välgörare**
 
 ---
 
-<style scoped>
-section {
-  background: #030817;
-}
-</style>
-
-![bg 40%](assets/images/layers.png)
+![bg 25%](assets/images/layers.png)
 
 ---
 
 <!-- Part 4 - AI and Open Source -->
 
+<!-- _class: lead bg-title -->
+
+# Open Source och AI
+
 ![bg](assets/images/ai.jpg)
-
----
-
-## Elefanten i rummet
-
-* LLMs har tränats till stor del på öppen källkod
-* AI-företag har gjort stora vinster på allmänhetens arbete
-* Vad säger egentligen licenserna om det här?
 
 ---
 
 ## AI och Open Source
 
+* LLMs har tränats till stor del på öppen källkod
+* AI-företag har gjort stora vinster på allmänhetens arbete
+* Vad säger egentligen licenserna om det här?
 * AI bidrar nu aktivt till öppna källkodsprojekt
-* Kvalitet varierar ... hur man använder det ...
-* Ökad press på maintainers
-* Mer kod, lika många eller färre reviewers
 
 ---
 
 ## Risker
 
-* AI duktig på att hitta sårbarheter -> fördel angripare
-* 
-* Hinner vi med?
+* AI duktig på att hitta sårbarheter
+  * Fördel angripare ...
+* Mer kod, lika många eller färre reviewers
+* Slop PRs - Ökad press på maintainers
+* AI kan generera kod - sämre på att bygga långsiktighet/förtroende
+* Communities kommer behöva tänka om i en AI-centrerad värld
 
-- Attackers use AI to find vulnerabilities faster
-- Synthetic personas for social engineering (XZ-style attacks at scale)
-- Automated typosquatting and malicious package generation
+---
 
-The threat model is changing — defences must too
+![bg 40%](assets/images/modern-infrastructure-2.png)
 
+---
+
+<!-- Part 5 - What can we do? -->
+
+<!-- _class: lead bg-title -->
+
+# Vad kan vi göra?
 
 ![bg](assets/images/typing.jpg)
 
@@ -271,6 +290,26 @@ The threat model is changing — defences must too
 <!-- _class: lead -->
 
 Utvecklartid är en **värdefull** resurs
+
+---
+
+## "The tragedy of the commons"
+
+* Open source är en gemensam resurs
+* Många får ut värde, få bidrar tillbaka
+* Kritiska infrastruktur förvaltas genom goodwill på fritiden
+
+---
+
+## What burnout looks like
+
+- Maintainers fielding support requests from Fortune 500 companies — for free
+- Security disclosures landing in personal inboxes with days-long SLA demands
+- The XZ Utils attacker *exploited* a burned-out maintainer's desperate need for help
+
+This is not a technical problem. It is a **social and economic** one.
+
+---
 
 ---
 
@@ -289,78 +328,5 @@ Utvecklartid är en **värdefull** resurs
 * Billigare och bättre att bygga saker tillsammans
 * Offentlig sektor: publika medel → publik kod
 * Digital suveränitet omöjligt eller mycket svårt utan
-
----
-
-<!-- _class: lead -->
-
-# Tack
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-
-
----
-
----
-
----
-
-<!-- _class: lead -->
-
-# Part 5: Maintainer Burnout & Sustainability
-
----
-
-## The tragedy of the commons
-
-- Open source is a shared resource
-- Everyone extracts value; few contribute back
-- Critical infrastructure maintained by individuals on goodwill and spare time
-
-> *"We put a lot of work into this library. If you're using it for profit,*
-> *please consider sponsoring us."*
-> — README.md, read by no one
-
----
-
-## What burnout looks like
-
-- Maintainers fielding support requests from Fortune 500 companies — for free
-- Security disclosures landing in personal inboxes with days-long SLA demands
-- The XZ Utils attacker *exploited* a burned-out maintainer's desperate need for help
-
-This is not a technical problem. It is a **social and economic** one.
 
 ---
