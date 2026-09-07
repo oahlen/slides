@@ -52,3 +52,10 @@ unsplash.com
 * Security section image
 * AI section image
 * part 5 people reasoning section image
+
+## Takeaways
+
+* Open source has been proven to be very effective, taken over the software ecosystem, large companies now depend on it
+
+* Generating code is easy, Building communities is harder
+

@@ -20,13 +20,138 @@ _class: lead
 
 ---
 
-![bg](assets/images/crates.jpg)
+<!-- _class: lead -->
+
+<!-- Part 1 - Open Source Defintion -->
+
+# Vem använder Open Source?
+
+---
+
+## Open Source finns överallt
+
+Du använder det varje dag
+
+* Din telefon kör Linux (Android) eller en BSD-baserad kärna (iOS)
+* Tjänster du använder kör open source databaser och web servrar
+* Dina moderna prylar kör open source, Bilar, smart-TV, wearables
+* Internets fundament bygger på det: (DNS, HTTP, TLS, etc.)
+
+<!-- We as consultants use it in our daily job -->
 
 ---
 
 <!-- _class: lead -->
 
-# Vem använder Open Source?
+**There is no "opting out"**
+
+---
+
+## Defintion
+
+Med Open Source står det dig *fritt* att:
+
+* Använda mjukvara oavsett syfte
+* Undersöka mjukvaras källkod
+* Ändra mjukvarans källkod
+* Paketera om eller distribuera mjukvaran
+
+---
+
+<!-- _class: lead -->
+
+> Free as in speech ... not beer
+
+---
+
+<!-- _class: lead -->
+
+## Software is built by Communities
+
+> A group of people sharing the same goals, ideas or values
+
+---
+
+## Motivation
+
+* Svårt (omöjligt) att bygga allt själv
+* Lättare att bygga och underhålla något tillsammans
+* Man vill bidra eller göra ekosystemet Lättare
+* Personliga anledningar - Det är roligt
+
+<!-- Might be considered strange by some -->
+
+---
+
+## Hur fungerar det?
+
+* Frivilla och företag publiserar kod med "permissive licenses"
+* Alla kan använda, studera och ändra källkoden
+* Bidrag sker genom pull requests, buggrapporter och diskussioner
+* Styrning - Allt från one man shows till stiftelser
+
+---
+
+## Organisation
+
+| Modell | Exempel | Utmaningar |
+|---|---|---|
+| Corporate backed | Kubernetes | Intressekonflikter |
+| Stiftelser | Linux, Apache | Kostnader / Ekonomi |
+| Multi-licens | Redis, MongoDB | Splittring |
+| Donationer / sponsring | curl | Burnout |
+
+---
+
+## Läs licenstexten ...
+
+```
+MIT License
+
+Copyright (c) 2026 John Open Source
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions ...
+```
+
+---
+
+![bg 80%](assets/images/licenses.jpg)
+
+<!-- License types -->
+
+---
+
+<!-- Part 2 - Supply Chain Myth -->
+
+![bg](assets/images/crates.jpg)
+
+---
+
+## Leveranskedja
+
+* Naturligt språk när vi pratar om tillverkning
+* Känns intuitivt att applicera på mjukvara
+* Ett vanligare språkbruk efter kända incidenter/säkerhetshål
+* Passar bra in på hur företag och myndigheter benämner beroenden
+
+---
+
+## Missförståndet
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 ---
 
@@ -36,216 +161,179 @@ _class: lead
 
 ---
 
+<!-- _class: lead -->
+
+Du har ingen levernatör men kanske en **välgörare**
+
+*Supply Chain* implicerar förpiktelser som inte existerar
+
+---
+
 ![bg 40%](assets/images/modern-infrastructure-2.png)
 
 ---
+
+## Jämförelse
+
+| Supply chain | Open source |
+|---|---|
+| Kontraktsbaserat | Frivilligt bidrag |
+| Garanti och ansvar | - |
+| Kvalitetskontroll | Best-effort, god vilja |
+| Jag betalar, du levererar | Jag tar, du ger |
+
+
+<!-- Risk för compliance theater -->
+<!-- Onödigt stress på obetalda utvecklare -->
+<!-- Viktigare med audits än att bidra och förbättra -->
+<!-- Försämrar open source som helhet -->
+
+---
+
+---
+
+<!-- Part 3 - Security Perspective -->
 
 ![bg](assets/images/security.jpg)
 
 ---
 
+## Incidenter
+
+* **Heart Bleed (2014)** - Bugg i TLS; angripare kunde exfiltera information ur webservrar
+* **Log4Shell (2021)** - Log4j; remote code execution genom populärt loggramverk
+* **XZ Utils Backdoor (2024)** - Social engineering attack mot en utbränd maintainer
+* Inte alltid uppenbart att du som användare är exponerad.
+
+---
+
+## Ska man orora sig?
+
+* I större open source projekt tas säkerhet generellt seriöst
+* Lång CVE-lista ofta ett tecken på transparens/genomögad kod
+* Linux - korta ledtider för patching; bättre än många kommerciella aktörer
+* ... men allt är en fråga om resurser
+
+<!-- A proprietary product with fewer CVEs may simply have fewer people looking -->
+
+---
+
+<style scoped>
+section {
+  background: #030817;
+}
+</style>
+
+![bg 40%](assets/images/layers.png)
+
+---
+
+<!-- Part 4 - AI and Open Source -->
+
 ![bg](assets/images/ai.jpg)
 
 ---
 
-![bg](assets/images/typing.jpg)
+## Elefanten i rummet
+
+* LLMs har tränats till stor del på öppen källkod
+* AI-företag har gjort stora vinster på allmänhetens arbete
+* Vad säger egentligen licenserna om det här?
 
 ---
 
-## Open Source finns överallt
+## AI och Open Source
 
-Du använder det varje dag
-
-* Din telefon kör Linux (Android) eller en BSD-baserad kärna (iOS)
-* Din bank kör open source databaser och web servrar
-* Your car's infotainment system, your router, your smart TV
-* The internet itself runs on open source (DNS, HTTP, TLS, BGP…)
+* AI bidrar nu aktivt till öppna källkodsprojekt
+* Kvalitet varierar ... hur man använder det ...
+* Ökad press på maintainers
+* Mer kod, lika många eller färre reviewers
 
 ---
 
-## Open Source finns överallt
-
-Du använder det varje dag
-
-- Din telefon kör Linux (Android) eller en BSD-baserad kärna (iOS)
-- Din bank kör open source databaser och web servrar
-- Your car's infotainment system, your router, your smart TV
-- The internet itself runs on open source (DNS, HTTP, TLS, BGP…)
-
-**There is no "opting out"**
-
----
-
-## Agenda
-
-1. What is open source?
-2. The "supply chain" framing — and why it's wrong
-3. Security: real risks, real incidents
-4. AI and open source
-5. Maintainer burnout & sustainability
-6. What can we all do?
-
----
-
-<!-- _class: lead -->
-
-# Part 1: What Is Open Source?
-
----
-
-## Free as in freedom
-
-- Source code is publicly available and modifiable
-- Born from the hacker culture of the 60s–70s
-- Richard Stallman & the GNU Project (1983): software freedom as a principle
-- Linus Torvalds & Linux (1991): pragmatic, collaborative development
-
-> *"Free software is a matter of liberty, not price."*
-> — Richard Stallman
-
----
-
-
-## How open source works
-
-- Volunteers and companies publish code under permissive licenses
-- Anyone can use, study, modify and redistribute
-- Contributions happen through pull requests, bug reports, mailing lists
-- Governance ranges from a single maintainer to foundations (Apache, Linux Foundation, CNCF…)
-
-> Key point: **it is not a product. It is a gift.**
-
----
-
-<!-- _class: lead -->
-
-# Part 2: The "Supply Chain" — A Myth
-
----
-
-## Where did "supply chain" come from?
-
-- Manufacturing analogy: raw materials → factories → finished product
-- Applied to software after high-profile incidents (SolarWinds 2020, Log4Shell 2021, XZ Utils 2024)
-- Governments and compliance frameworks picked it up: SBOM, EO 14028, CRA…
-
-The framing *feels* intuitive — but it doesn't fit open source
-
----
-
-## What a real supply chain looks like
-
-| Supply chain | Open source |
-|---|---|
-| Contractual relationship | Voluntary contribution |
-| Warranty & liability | No warranty (read the license!) |
-| Quality gates & SLAs | Best-effort, community-driven |
-| You pay, they deliver | You take, they gave |
-
----
-
-## Read the license
-
-Nearly every open source license includes a clause like this:
-
-> *"THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,*
-> *EXPRESS OR IMPLIED…"*
-> — MIT License
-
-You have no supplier. You have a benefactor.
-
-Calling it a "supply chain" implies obligations that **do not exist**.
-
----
-
-## Why the framing matters
-
-Treating open source as a supply chain leads to:
-
-- Compliance theatre instead of actual security work
-- Pressure on unpaid maintainers to meet enterprise SLAs
-- Focus on auditing rather than contributing
-- Missing the root cause: **underfunded, overworked humans**
-
----
-
-<!-- _class: lead -->
-
-# Part 3: Security — Real Risks
-
----
-
-## Incidents worth knowing
-
-- **Log4Shell (2021)** — Log4j, maintained by a handful of volunteers, used by millions of systems
-- **XZ Utils backdoor (2024)** — a patient, multi-year social engineering attack on a single maintainer
-- **event-stream (2018)** — malicious code injected after maintainer handed off npm package
-- **Polyfill.io (2024)** — CDN domain acquired, scripts weaponised
-
-Common thread: **the humans, not the code**
-
----
-
-## Linux CVEs: a closer look
-
-Linux has CVEs — lots of them. But context matters:
-
-- Real issues, responsibly disclosed, patched quickly
-- The kernel security team responds faster than most commercial vendors
-- High CVE count often reflects *better* disclosure culture, not worse code
-
-A proprietary product with fewer CVEs may simply have fewer people looking
-
----
-
-## The actual attack surface
-
-```
-your system
-  └── OS packages              ← distro maintains, patches fast
-        └── language ecosystem ← ⚠️ high risk
-              └── transitive dependencies
-                    └── maintained by: 1 person, unpaid  ← ⚠️ very high risk
-```
-
-The risk is not the code — it's the **concentration of trust**
-in under-resourced people
-
----
-
-<!-- _class: lead -->
-
-# Part 4: AI and Open Source
-
----
-
-## AI was trained on open source
-
-- LLMs are trained on billions of lines of open source code
-- The models powering Copilot, Cursor, CodeWhisperer… learned from freely given work
-- Licensing questions remain largely unresolved
-
-AI companies owe a debt to the commons
-
----
-
-## AI is now contributing to open source
-
-- AI-generated PRs, issues, and comments are increasing rapidly
-- Quality varies wildly; maintainer review burden grows
-- Subtle bugs and vulnerabilities can slip through at scale
-
-**More code, same (or fewer) reviewers**
-
----
-
-## AI-assisted attacks
+## Risker
+
+* AI duktig på att hitta sårbarheter -> fördel angripare
+* 
+* Hinner vi med?
 
 - Attackers use AI to find vulnerabilities faster
 - Synthetic personas for social engineering (XZ-style attacks at scale)
 - Automated typosquatting and malicious package generation
 
 The threat model is changing — defences must too
+
+
+![bg](assets/images/typing.jpg)
+
+---
+
+<!-- _class: lead -->
+
+Utvecklartid är en **värdefull** resurs
+
+---
+
+## Vad kan vi göra?
+
+* Förstå problematiken
+* Skapa förståelse för de open source beroenden du/kunden har
+* Väg riskerna mot fördelarna med open source beroendekedjor
+* Bidra tillbaka kod istället för att patcha lokalt, ge credit
+* Bidra med tid/pengar (Sovereign Tech Fund)
+
+---
+
+## Ligger i allas intresse
+
+* Billigare och bättre att bygga saker tillsammans
+* Offentlig sektor: publika medel → publik kod
+* Digital suveränitet omöjligt eller mycket svårt utan
+
+---
+
+<!-- _class: lead -->
+
+# Tack
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
+---
+
+---
 
 ---
 
@@ -274,66 +362,5 @@ The threat model is changing — defences must too
 - The XZ Utils attacker *exploited* a burned-out maintainer's desperate need for help
 
 This is not a technical problem. It is a **social and economic** one.
-
----
-
-## Sustainability models (and their limits)
-
-| Model | Examples | Challenge |
-|---|---|---|
-| Corporate backing | React, Kubernetes, Android | Interests can diverge |
-| Foundations | Linux, Apache, Python | Membership fees ≠ maintainer pay |
-| Open-core / dual license | Redis, MySQL, MongoDB | Community fractures |
-| Donations / sponsorship | curl, many small libs | Rarely enough |
-
-No silver bullet — but doing nothing is the worst option
-
----
-
-<!-- _class: lead -->
-
-# Part 6: What Can We All Do?
-
----
-
-## Open source is in everyone's interest
-
-If you use open source (you do), you have a stake in its health
-
-- **Businesses:** cheaper to contribute upstream than to fork and maintain privately
-- **Governments:** public money → public code; fund critical infrastructure
-- **Developers:** report bugs, review PRs, write docs, answer questions
-- **Everyone:** sponsor maintainers (GitHub Sponsors, Open Collective, thanks.dev)
-
----
-
-## Practical steps
-
-- Audit what you actually depend on — know your critical paths
-- Contribute fixes upstream instead of patching locally
-- Give maintainers credit, time, and money
-- Advocate internally: open source work counts as real work
-- Support policy that funds open source (Sovereign Tech Fund, NLnet…)
-
----
-
-## Reframe the conversation
-
-| Instead of… | Say… |
-|---|---|
-| "Supply chain risk" | "Dependency health" |
-| "Vendor compliance" | "Community investment" |
-| "SBOM audit" | "Know what you owe" |
-| "Patch SLA" | "Fund the maintainer" |
-
----
-
-<!-- _class: lead -->
-
-# There is no supply chain.
-
-# There is only the commons —
-
-# and we all live here.
 
 ---
