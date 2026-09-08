@@ -33,7 +33,7 @@ style: |
 
 <!-- _class: lead -->
 
-<!-- Part 1 - Open Source Defintion -->
+<!-- Part 1 - Open Source Definition -->
 
 # Vem använder Open Source?
 
@@ -44,7 +44,7 @@ style: |
 Du använder det varje dag
 
 * Din telefon kör Linux (Android) eller en BSD-baserad kärna (iOS)
-* Tjänster du använder kör open source databaser och web servrar
+* Tjänster du använder kör open source databaser och webbservrar
 * Dina moderna prylar kör open source, Bilar, smart-TV, wearables
 * Internets fundament bygger på det: (DNS, HTTP, TLS, etc.)
 
@@ -66,13 +66,7 @@ p {
 
 ---
 
-![bg 40%](assets/images/modern-infrastructure.png)
-
-<!-- Classic from XKCD -->
-
----
-
-## Defintion
+## Definition
 
 Med Open Source står det dig *fritt* att:
 
@@ -83,9 +77,11 @@ Med Open Source står det dig *fritt* att:
 
 ---
 
-<!-- _class: lead -->
+<!-- _class: lead bg-title -->
 
-> Free as in speech ... not beer
+# Free as in speech ... not beer
+
+![bg](assets/images/beer.jpg)
 
 ---
 
@@ -101,7 +97,7 @@ Med Open Source står det dig *fritt* att:
 
 * Svårt (omöjligt) att bygga allt själv
 * Lättare att bygga och underhålla något tillsammans
-* Man vill bidra eller göra ekosystemet Lättare
+* Man vill bidra eller göra ekosystemet bättre
 * Personliga anledningar - Det är roligt
 
 <!-- Might be considered strange by some -->
@@ -110,21 +106,10 @@ Med Open Source står det dig *fritt* att:
 
 ## Hur fungerar det?
 
-* Frivilla och företag publiserar kod med "permissive licenses"
+* Frivilliga och företag publicerar kod med "permissive licenses"
 * Alla kan använda, studera och ändra källkoden
 * Bidrag sker genom pull requests, buggrapporter och diskussioner
 * Styrning - Allt från one man shows till stiftelser
-
----
-
-## Organisation
-
-| Modell | Exempel | Utmaningar |
-|---|---|---|
-| Corporate backed | Kubernetes | Intressekonflikter |
-| Stiftelser | Linux, Apache | Kostnader / Ekonomi |
-| Multi-licens | Redis, MongoDB | Splittring |
-| Donationer / sponsring | curl | Burnout |
 
 ---
 
@@ -153,11 +138,54 @@ furnished to do so, subject to the following conditions ...
 
 ---
 
+<!-- Part 3 - Security Perspective -->
+
+<!-- _class: lead bg-title -->
+
+# Open Source och Säkerhet
+
+![bg](assets/images/security.jpg)
+
+---
+
+## Incidenter
+
+* **Heart Bleed (2014)** - Bugg i TLS; angripare kunde exfiltera information ur webbservrar
+* **Log4Shell (2021)** - Log4j; remote code execution genom populärt loggramverk
+* **XZ Utils Backdoor (2024)** - Social engineering attack mot en utbränd maintainer
+* Inte alltid uppenbart att du som användare är exponerad.
+
+---
+
+![bg 25%](assets/images/layers.png)
+
+<!-- Explain how you as a user can be exposed -->
+
+---
+
+## Ska man oroa sig?
+
+* I större open source projekt tas säkerhet generellt seriöst
+* Lång CVE-lista ofta ett tecken på transparens/genomlyst kod
+* Linux - korta ledtider för patching; bättre än många kommersiella aktörer
+* ... men allt är en fråga om resurser
+
+<!-- A proprietary product with fewer CVEs may simply have fewer people looking -->
+
+
+---
+
 <!-- _class: lead bg-title -->
 
 # The Supply Chain Myth
 
 ![bg 100%](assets/images/containers.jpg)
+
+---
+
+![bg 40%](assets/images/modern-infrastructure.png)
+
+<!-- Classic from XKCD -->
 
 ---
 
@@ -186,9 +214,9 @@ SOFTWARE.
 
 <!-- _class: lead -->
 
-Du har ingen levernatör men kanske en **välgörare**
+Du har ingen leverantör men kanske en **välgörare**
 
-*Supply Chain* implicerar förpiktelser som inte existerar
+*Supply Chain* implicerar förpliktelser som inte existerar
 
 ---
 
@@ -207,39 +235,17 @@ Du har ingen levernatör men kanske en **välgörare**
 <!-- Viktigare med audits än att bidra och förbättra -->
 <!-- Försämrar open source som helhet -->
 
----
+ ---
 
-<!-- Part 3 - Security Perspective -->
+## Organisation
 
-<!-- _class: lead bg-title -->
+| Modell | Exempel | Utmaningar |
+|---|---|---|
+| Corporate backed | Kubernetes | Intressekonflikter |
+| Stiftelser | Linux, Apache | Kostnader / Ekonomi |
+| Multi-licens | Redis, MongoDB | Splittring |
+| Donationer / sponsring | curl | Burnout |
 
-# Open Source och Säkerhet
-
-![bg](assets/images/security.jpg)
-
----
-
-## Incidenter
-
-* **Heart Bleed (2014)** - Bugg i TLS; angripare kunde exfiltera information ur webservrar
-* **Log4Shell (2021)** - Log4j; remote code execution genom populärt loggramverk
-* **XZ Utils Backdoor (2024)** - Social engineering attack mot en utbränd maintainer
-* Inte alltid uppenbart att du som användare är exponerad.
-
----
-
-## Ska man orora sig?
-
-* I större open source projekt tas säkerhet generellt seriöst
-* Lång CVE-lista ofta ett tecken på transparens/genomögad kod
-* Linux - korta ledtider för patching; bättre än många kommerciella aktörer
-* ... men allt är en fråga om resurser
-
-<!-- A proprietary product with fewer CVEs may simply have fewer people looking -->
-
----
-
-![bg 25%](assets/images/layers.png)
 
 ---
 
@@ -247,7 +253,31 @@ Du har ingen levernatör men kanske en **välgörare**
 
 <!-- _class: lead bg-title -->
 
-# Open Source och AI
+# The tragedy of the commons
+
+![bg](assets/images/ai.jpg)
+
+---
+
+## The tragedy of the commons
+
+* Open source är en gemensam resurs
+* Många får ut värde, få bidrar tillbaka
+* Kritisk infrastruktur i samhället förvaltas i praktiken av frivilliga
+
+---
+
+## Problematiken
+
+* Open source communities under press:
+  * Företag/användare förväntar sig gratis underhåll
+  * Attacker mot open source projekt, ibland statlig inblandning
+  * AI-hets (möjligheter men också risker)
+* Socioekonomisk problemställning snarare än teknisk
+
+---
+
+<!-- _class: lead -->
 
 ![bg](assets/images/ai.jpg)
 
@@ -290,26 +320,6 @@ Du har ingen levernatör men kanske en **välgörare**
 <!-- _class: lead -->
 
 Utvecklartid är en **värdefull** resurs
-
----
-
-## "The tragedy of the commons"
-
-* Open source är en gemensam resurs
-* Många får ut värde, få bidrar tillbaka
-* Kritiska infrastruktur förvaltas genom goodwill på fritiden
-
----
-
-## What burnout looks like
-
-- Maintainers fielding support requests from Fortune 500 companies — for free
-- Security disclosures landing in personal inboxes with days-long SLA demands
-- The XZ Utils attacker *exploited* a burned-out maintainer's desperate need for help
-
-This is not a technical problem. It is a **social and economic** one.
-
----
 
 ---
 
