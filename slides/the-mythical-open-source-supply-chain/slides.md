@@ -255,11 +255,11 @@ Du har ingen leverantör men kanske en **välgörare**
 
 # The tragedy of the commons
 
-![bg](assets/images/ai.jpg)
+![bg](assets/images/tradegy.jpg)
 
 ---
 
-## The tragedy of the commons
+## En gemensam resurs
 
 * Open source är en gemensam resurs
 * Många får ut värde, få bidrar tillbaka
