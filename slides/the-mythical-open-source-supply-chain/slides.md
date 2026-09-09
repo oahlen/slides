@@ -172,7 +172,6 @@ furnished to do so, subject to the following conditions ...
 
 <!-- A proprietary product with fewer CVEs may simply have fewer people looking -->
 
-
 ---
 
 <!-- _class: lead bg-title -->
