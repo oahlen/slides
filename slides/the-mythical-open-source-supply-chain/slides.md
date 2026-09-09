@@ -45,7 +45,7 @@ Du använder det varje dag
 
 * Din telefon kör Linux (Android) eller en BSD-baserad kärna (iOS)
 * Tjänster du använder kör open source databaser och webbservrar
-* Dina moderna prylar kör open source, Bilar, smart-TV, wearables
+* Bilar, smart-TV:ar och wearables kör open source
 * Internets fundament bygger på det: (DNS, HTTP, TLS, etc.)
 
 <!-- We as consultants use it in our daily job -->
@@ -109,7 +109,7 @@ Med Open Source står det dig *fritt* att:
 * Frivilliga och företag publicerar kod med "permissive licenses"
 * Alla kan använda, studera och ändra källkoden
 * Bidrag sker genom pull requests, buggrapporter och diskussioner
-* Styrning - Allt från one man shows till stiftelser
+* Styrningen varierar, från soloprojekt till stora stiftelser
 
 ---
 
@@ -150,10 +150,10 @@ furnished to do so, subject to the following conditions ...
 
 ## Incidenter
 
-* **Heart Bleed (2014)** - Bugg i TLS; angripare kunde exfiltera information ur webbservrar
-* **Log4Shell (2021)** - Log4j; remote code execution genom populärt loggramverk
+* **Heart Bleed (2014)** - en TLS-bugg som lät angripare läsa ut data från servrar
+* **Log4Shell (2021)** - remote code execution via ett populärt loggramverk (Log4j)
 * **XZ Utils Backdoor (2024)** - Social engineering attack mot en utbränd maintainer
-* Inte alltid uppenbart att du som användare är exponerad.
+* Som användare är det inte alltid uppenbart att du är exponerad
 
 ---
 
@@ -166,8 +166,8 @@ furnished to do so, subject to the following conditions ...
 ## Ska man oroa sig?
 
 * I större open source projekt tas säkerhet generellt seriöst
-* Lång CVE-lista ofta ett tecken på transparens/genomlyst kod
-* Linux - korta ledtider för patching; bättre än många kommersiella aktörer
+* En lång CVE-lista är *ofta* ett tecken på transparens, inte otrygghet
+* Linux har korta ledtider för patching, bättre än många kommersiella alternativ
 * ... men allt är en fråga om resurser
 
 <!-- A proprietary product with fewer CVEs may simply have fewer people looking -->
@@ -285,7 +285,7 @@ Du har ingen leverantör men kanske en **välgörare**
 ## AI och Open Source
 
 * LLMs har tränats till stor del på öppen källkod
-* AI-företag har gjort stora vinster på allmänhetens arbete
+* AI-företag har gjort stora vinster på jobb som communityn gjort gratis
 * Vad säger egentligen licenserna om det här?
 * AI bidrar nu aktivt till öppna källkodsprojekt
 
@@ -297,7 +297,7 @@ Du har ingen leverantör men kanske en **välgörare**
   * Fördel angripare ...
 * Mer kod, lika många eller färre reviewers
 * Slop PRs - Ökad press på maintainers
-* AI kan generera kod - sämre på att bygga långsiktighet/förtroende
+* AI kan generera kod, men bygger inte långsiktigt förtroende
 * Communities kommer behöva tänka om i en AI-centrerad värld
 
 ---
@@ -325,8 +325,8 @@ Utvecklartid är en **värdefull** resurs
 ## Vad kan vi göra?
 
 * Förstå problematiken
-* Skapa förståelse för de open source beroenden du/kunden har
-* Väg riskerna mot fördelarna med open source beroendekedjor
+* Skapa förståelse för vilka open source-beroenden du eller kunden faktiskt har
+* Väg riskerna mot fördelarna med att bygga på open source
 * Bidra tillbaka kod istället för att patcha lokalt, ge credit
 * Bidra med tid/pengar (Sovereign Tech Fund)
 
@@ -336,6 +336,6 @@ Utvecklartid är en **värdefull** resurs
 
 * Billigare och bättre att bygga saker tillsammans
 * Offentlig sektor: publika medel → publik kod
-* Digital suveränitet omöjligt eller mycket svårt utan
+* Svårt att uppnå digital suveränitet utan open source
 
 ---
