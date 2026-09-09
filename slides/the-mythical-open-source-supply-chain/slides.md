@@ -52,6 +52,18 @@ Du använder det varje dag
 
 ---
 
+## Oss konsulter
+
+Vi möter det i princip på varje uppdrag
+
+* Language toolchains - kompilatorer, pakethanterare, runtimes
+* Server software - operativsystem, molntjänster
+* Kodbibliotek - allt från små hjälpfunktioner till stora ramverk
+
+<!-- Nästan omöjligt att leverera ett projekt utan att röra open source -->
+
+---
+
 <!-- _class: lead -->
 
 <style scoped>
@@ -98,7 +110,7 @@ Med Open Source står det dig *fritt* att:
 * Svårt (omöjligt) att bygga allt själv
 * Lättare att bygga och underhålla något tillsammans
 * Man vill bidra eller göra ekosystemet bättre
-* Personliga anledningar - Det är roligt
+* Personliga anledningar - **Det är roligt**
 
 <!-- Might be considered strange by some -->
 
@@ -138,7 +150,7 @@ furnished to do so, subject to the following conditions ...
 
 ---
 
-<!-- Part 3 - Security Perspective -->
+<!-- Part 2 - Security Perspective -->
 
 <!-- _class: lead bg-title -->
 
@@ -173,6 +185,8 @@ furnished to do so, subject to the following conditions ...
 <!-- A proprietary product with fewer CVEs may simply have fewer people looking -->
 
 ---
+
+<!-- Part 3 - The Myth -->
 
 <!-- _class: lead bg-title -->
 
@@ -248,7 +262,7 @@ Du har ingen leverantör men kanske en **välgörare**
 
 ---
 
-<!-- Part 4 - AI and Open Source -->
+<!-- Part 4 - Tragedy of the commons -->
 
 <!-- _class: lead bg-title -->
 
@@ -263,6 +277,7 @@ Du har ingen leverantör men kanske en **välgörare**
 * Open source är en gemensam resurs
 * Många får ut värde, få bidrar tillbaka
 * Kritisk infrastruktur i samhället förvaltas i praktiken av frivilliga
+* Om alla tänker att någon annan sköter underhållet - vem gör det då?
 
 ---
 
@@ -276,18 +291,22 @@ Du har ingen leverantör men kanske en **välgörare**
 
 ---
 
-<!-- _class: lead -->
+<!-- Part 5 - AI och Open Source -->
+
+<!-- _class: lead bg-title -->
+
+# AI och Open Source
 
 ![bg](assets/images/ai.jpg)
 
 ---
 
-## AI och Open Source
+## Nuläget
 
 * LLMs har tränats till stor del på öppen källkod
 * AI-företag har gjort stora vinster på jobb som communityn gjort gratis
-* Vad säger egentligen licenserna om det här?
 * AI bidrar nu aktivt till öppna källkodsprojekt
+* Vad säger egentligen licenserna om det här?
 
 ---
 
@@ -306,7 +325,7 @@ Du har ingen leverantör men kanske en **välgörare**
 
 ---
 
-<!-- Part 5 - What can we do? -->
+<!-- Part 6 - What can we do? -->
 
 <!-- _class: lead bg-title -->
 
@@ -337,5 +356,6 @@ Utvecklartid är en **värdefull** resurs
 * Billigare och bättre att bygga saker tillsammans
 * Offentlig sektor: publika medel → publik kod
 * Svårt att uppnå digital suveränitet utan open source
+* Välgörenheten du fick gratis, kan du inte ta för given imorgon
 
 ---
