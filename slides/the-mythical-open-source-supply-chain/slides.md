@@ -194,7 +194,7 @@ furnished to do so, subject to the following conditions ...
 
 ---
 
-![bg 25%](assets/images/layers.svg)
+![bg 35%](assets/images/layers.svg)
 
 <!-- Explain how you as a user can be exposed -->
 
