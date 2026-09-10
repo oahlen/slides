@@ -21,6 +21,11 @@ style: |
     border-radius: 0.2em;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
   }
+  .img-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
 ---
 
 <!-- _class: lead bg-title -->
@@ -57,7 +62,7 @@ Du använder det varje dag
 Vi möter det i princip på varje uppdrag
 
 * Language toolchains - kompilatorer, pakethanterare, runtimes
-* Server software - operativsystem, molntjänster
+* Servermjukvara - operativsystem, molntjänster
 * Kodbibliotek - allt från små hjälpfunktioner till stora ramverk
 
 <!-- Nästan omöjligt att leverera ett projekt utan att röra open source -->
@@ -78,6 +83,12 @@ p {
 
 ---
 
+<div class="img-left">
+
+![w:250](assets/images/open-book.svg)
+
+<div>
+
 ## Definition
 
 Med Open Source står det dig *fritt* att:
@@ -86,6 +97,10 @@ Med Open Source står det dig *fritt* att:
 * Undersöka mjukvaras källkod
 * Ändra mjukvarans källkod
 * Paketera om eller distribuera mjukvaran
+
+</div>
+
+</div>
 
 ---
 
@@ -160,6 +175,12 @@ furnished to do so, subject to the following conditions ...
 
 ---
 
+<div class="img-left">
+
+![w:250](assets/images/siren.svg)
+
+<div>
+
 ## Incidenter
 
 * **Heart Bleed (2014)** - en TLS-bugg som lät angripare läsa ut data från servrar
@@ -167,13 +188,23 @@ furnished to do so, subject to the following conditions ...
 * **XZ Utils Backdoor (2024)** - Social engineering attack mot en utbränd maintainer
 * Som användare är det inte alltid uppenbart att du är exponerad
 
+</div>
+
+</div>
+
 ---
 
-![bg 25%](assets/images/layers.png)
+![bg 25%](assets/images/layers.svg)
 
 <!-- Explain how you as a user can be exposed -->
 
 ---
+
+<div class="img-left">
+
+![w:250](assets/images/worried-face.svg)
+
+<div>
 
 ## Ska man oroa sig?
 
@@ -181,6 +212,10 @@ furnished to do so, subject to the following conditions ...
 * En lång CVE-lista är *ofta* ett tecken på transparens, inte otrygghet
 * Linux har korta ledtider för patching, bättre än många kommersiella alternativ
 * ... men allt är en fråga om resurser
+
+</div>
+
+</div>
 
 <!-- A proprietary product with fewer CVEs may simply have fewer people looking -->
 
@@ -202,12 +237,23 @@ furnished to do so, subject to the following conditions ...
 
 ---
 
+<div class="img-left">
+
+![w:250](assets/images/boxes.png)
+
+<div>
+
 ## Leveranskedja
 
 * Naturligt språk när vi pratar om tillverkning
 * Känns intuitivt att applicera på mjukvara
 * Ett vanligare språkbruk efter kända incidenter/säkerhetshål
 * Passar bra in på hur företag och myndigheter benämner beroenden
+* Men är det korrekt?
+
+</div>
+
+</div>
 
 ---
 
@@ -301,12 +347,22 @@ Du har ingen leverantör men kanske en **välgörare**
 
 ---
 
+<div class="img-left">
+
+![w:250](assets/images/robot.svg)
+
+<div>
+
 ## Nuläget
 
 * LLMs har tränats till stor del på öppen källkod
 * AI-företag har gjort stora vinster på jobb som communityn gjort gratis
 * AI bidrar nu aktivt till öppna källkodsprojekt
 * Vad säger egentligen licenserna om det här?
+
+</div>
+
+</div>
 
 ---
 
@@ -341,6 +397,12 @@ Utvecklartid är en **värdefull** resurs
 
 ---
 
+<div class="img-left">
+
+![w:250](assets/images/thinking-face.svg)
+
+<div>
+
 ## Vad kan vi göra?
 
 * Förstå problematiken
@@ -348,6 +410,10 @@ Utvecklartid är en **värdefull** resurs
 * Väg riskerna mot fördelarna med att bygga på open source
 * Bidra tillbaka kod istället för att patcha lokalt, ge credit
 * Bidra med tid/pengar (Sovereign Tech Fund)
+
+</div>
+
+</div>
 
 ---
 
