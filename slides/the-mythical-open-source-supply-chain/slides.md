@@ -434,6 +434,7 @@ Du har ingen leverantör men kanske en **välgörare**
 * Communities kommer behöva tänka om i en AI-centrerad värld
 
 <!-- AI dålig på att bygga communities, leder ofta till one man shows -->
+<!-- Det finns mer värde än vad koden anspelar på, inte alltid den bäst tekniska tillämpningen som är bäst överlag -->
 <!-- En intrinsisk risk mot open source - inte värt att samarbeta och utbyta idéer -->
 
 ---
@@ -488,3 +489,5 @@ Utvecklartid är en **värdefull** resurs
 <!-- Flera europeriska länder tittar på att gå över till open source -->
 
 ---
+
+![bg 60%](assets/images/ffmpeg.png)
