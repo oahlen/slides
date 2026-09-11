@@ -34,6 +34,9 @@ style: |
 
 ![bg](assets/images/crates.jpg)
 
+<!-- Tycker det är en viktig fråga -->
+<!-- Open source ligger mig närmt om hjärtat -->
+
 ---
 
 <!-- _class: lead -->
@@ -44,6 +47,12 @@ style: |
 
 ---
 
+<div class="img-left">
+
+![w:250](assets/images/globe.svg)
+
+<div>
+
 ## Open Source finns överallt
 
 Du använder det varje dag
@@ -53,7 +62,9 @@ Du använder det varje dag
 * Bilar, smart-TV:ar och wearables kör open source
 * Internets fundament bygger på det: (DNS, HTTP, TLS, etc.)
 
-<!-- We as consultants use it in our daily job -->
+</div>
+
+</div>
 
 ---
 
@@ -65,6 +76,7 @@ Vi möter det i princip på varje uppdrag
 * Servermjukvara - operativsystem, molntjänster
 * Kodbibliotek - allt från små hjälpfunktioner till stora ramverk
 
+<!-- Osannolikt med proprietära toolchains/ramverk när man pratar om "generisk" utveckling -->
 <!-- Nästan omöjligt att leverera ett projekt utan att röra open source -->
 
 ---
@@ -79,7 +91,7 @@ p {
 
 **There is no "opting out"**
 
-<!-- Open Source is the de facto standard for building modern systems -->
+<!-- Open Source är *de facto* standard för att bygga moderna system -->
 
 ---
 
@@ -102,6 +114,9 @@ Med Open Source står det dig *fritt* att:
 
 </div>
 
+<!-- Ok, förklara då vad det är ... -->
+<!-- Definitionen är något luddig men man pratar om "Spirit of Open Source" -->
+
 ---
 
 <!-- _class: lead bg-title -->
@@ -109,6 +124,8 @@ Med Open Source står det dig *fritt* att:
 # Free as in speech ... not beer
 
 ![bg](assets/images/beer.jpg)
+
+<!-- Ett missförstånd vi kommer dyka djupare i -->
 
 ---
 
@@ -131,6 +148,12 @@ Med Open Source står det dig *fritt* att:
 
 ---
 
+<div class="img-left">
+
+![w:250](assets/images/thinking-face.svg)
+
+<div>
+
 ## Hur fungerar det?
 
 * Frivilliga och företag publicerar kod med "permissive licenses"
@@ -138,7 +161,14 @@ Med Open Source står det dig *fritt* att:
 * Bidrag sker genom pull requests, buggrapporter och diskussioner
 * Styrningen varierar, från soloprojekt till stora stiftelser
 
+
+</div>
+
+</div>
+
 ---
+
+<!-- _class: lead -->
 
 ## Läs licenstexten ...
 
@@ -183,7 +213,7 @@ furnished to do so, subject to the following conditions ...
 
 ## Incidenter
 
-* **Heart Bleed (2014)** - en TLS-bugg som lät angripare läsa ut data från servrar
+* **Heartbleed (2014)** - en TLS-bugg som lät angripare läsa ut data från servrar
 * **Log4Shell (2021)** - remote code execution via ett populärt loggramverk (Log4j)
 * **XZ Utils Backdoor (2024)** - Social engineering attack mot en utbränd maintainer
 * Som användare är det inte alltid uppenbart att du är exponerad
@@ -246,16 +276,19 @@ furnished to do so, subject to the following conditions ...
 ## Leveranskedja
 
 * Naturligt språk när vi pratar om tillverkning
-* Känns intuitivt att applicera på mjukvara
 * Ett vanligare språkbruk efter kända incidenter/säkerhetshål
 * Passar bra in på hur företag och myndigheter benämner beroenden
 * Men är det korrekt?
+
+<!-- * Känns intuitivt att applicera på mjukvara -->
 
 </div>
 
 </div>
 
 ---
+
+<!-- _class: lead -->
 
 ## Missförståndet
 
@@ -269,15 +302,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+<!-- WITHOUT WARRANTY är det intressanta här -->
+
 ---
 
 <!-- _class: lead -->
+
+<style scoped>
+p {
+  font-size: 1.3em;
+}
+
+strong {
+  color: #ffac70;
+}
+</style>
 
 Du har ingen leverantör men kanske en **välgörare**
 
 *Supply Chain* implicerar förpliktelser som inte existerar
 
 ---
+
+<!-- _class: lead -->
 
 ## Jämförelse
 
@@ -294,7 +341,9 @@ Du har ingen leverantör men kanske en **välgörare**
 <!-- Viktigare med audits än att bidra och förbättra -->
 <!-- Försämrar open source som helhet -->
 
- ---
+---
+
+<!-- _class: lead -->
 
 ## Organisation
 
@@ -306,6 +355,9 @@ Du har ingen leverantör men kanske en **välgörare**
 | Donationer / sponsring | curl | Burnout |
 
 
+<!-- Vi gräver lite djupare hur styrning/governance faktiskt brukar fungera -->
+<!-- Viktigt som konsument av open source att förstå dess implikationer -->
+
 ---
 
 <!-- Part 4 - Tragedy of the commons -->
@@ -314,7 +366,9 @@ Du har ingen leverantör men kanske en **välgörare**
 
 # The tragedy of the commons
 
-![bg](assets/images/tradegy.jpg)
+![bg](assets/images/tragedy.jpg)
+
+<!-- Ideén att när en resurs är delad och kan gagna individen på bekostnad av allmänheten är det rationellt för individen att överanvända den tar slut för alla -->
 
 ---
 
@@ -323,7 +377,9 @@ Du har ingen leverantör men kanske en **välgörare**
 * Open source är en gemensam resurs
 * Många får ut värde, få bidrar tillbaka
 * Kritisk infrastruktur i samhället förvaltas i praktiken av frivilliga
-* Om alla tänker att någon annan sköter underhållet - vem gör det då?
+
+<!-- Om alla tänker att någon annan sköter underhållet - vem gör det då? -->
+<!-- Här kommer vi tillbaka till free beer analogin, frihet, inte gratis öl -->
 
 ---
 
@@ -375,6 +431,9 @@ Du har ingen leverantör men kanske en **välgörare**
 * AI kan generera kod, men bygger inte långsiktigt förtroende
 * Communities kommer behöva tänka om i en AI-centrerad värld
 
+<!-- AI dålig på att bygga communities, leder ofta till one man shows -->
+<!-- En intrinsisk risk mot open source - inte värt att samarbeta och utbyta idéer -->
+
 ---
 
 ![bg 40%](assets/images/modern-infrastructure-2.png)
@@ -423,5 +482,7 @@ Utvecklartid är en **värdefull** resurs
 * Offentlig sektor: publika medel → publik kod
 * Svårt att uppnå digital suveränitet utan open source
 * Välgörenheten du fick gratis, kan du inte ta för given imorgon
+
+<!-- Flera europeriska länder tittar på att gå över till open source -->
 
 ---
